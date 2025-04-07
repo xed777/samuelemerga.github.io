@@ -7,63 +7,65 @@
   <meta name="description" content="Portfolio di Samuele Merga: Showreel e contatti.">
   <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>/* CSS STYLES SOPRA */</style>
+  <style>/* CSS STYLES SOPRA (invariati per questo step) */</style>
 </head>
 <body>
-  <nav class="menu">
+  <nav class="menu" role="navigation" aria-label="Menu principale">
     <button id="showreelBtn" aria-controls="showreelContent" aria-expanded="false">SHOWREEL</button>
     <button id="contactBtn" aria-controls="contactForm" aria-expanded="false">CONTACT ME</button>
     <button id="bioBtn" aria-controls="bioContent" aria-expanded="false">CHI SONO</button>
   </nav>
 
-  <h1 class="logo"><span id="typed"></span></h1>
+  <h1 class="logo" role="heading" aria-level="1"><span id="typed"></span></h1>
 
-  <section class="video" id="showreelContent">
-    <button class="close-btn" aria-label="Chiudi">&times;</button>
-    <h2>Showreel</h2>
-    <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
-  </section>
+  <main>
+    <section class="video" id="showreelContent" role="dialog" aria-hidden="true" aria-labelledby="showreelBtn">
+      <button class="close-btn" aria-label="Chiudi Showreel">&times;</button>
+      <h2 id="showreelHeading">Showreel</h2>
+      <iframe title="Video Showreel" src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
+    </section>
 
-  <section class="form" id="contactForm">
-    <button class="close-btn" aria-label="Chiudi">&times;</button>
-    <div class="popup">
-      <h2>Contattami</h2>
-      <form action="https://formspree.io/f/xqkrbwlr" method="POST">
-        <label for="name">Nome</label>
-        <input class="box-input" type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input class="box-input" type="email" id="email" name="email" required>
-        <label for="message">Messaggio</label>
-        <textarea class="box-input" id="message" name="message" rows="4" required></textarea>
-        <button type="submit" class="btn-primary">Invia</button>
-      </form>
-      <p>Email: <a href="mailto:samuelemerga4@gmail.com">samuelemerga4@gmail.com</a></p>
-      <div class="social-links">
-        <a href="https://github.com/xed777" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+    <section class="form" id="contactForm" role="dialog" aria-hidden="true" aria-labelledby="contactBtn">
+      <button class="close-btn" aria-label="Chiudi modulo di contatto">&times;</button>
+      <div class="popup">
+        <h2 id="contactHeading">Contattami</h2>
+        <form action="https://formspree.io/f/xqkrbwlr" method="POST">
+          <label for="name">Nome</label>
+          <input class="box-input" type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input class="box-input" type="email" id="email" name="email" required>
+          <label for="message">Messaggio</label>
+          <textarea class="box-input" id="message" name="message" rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Invia</button>
+        </form>
+        <p>Email: <a href="mailto:samuelemerga4@gmail.com">samuelemerga4@gmail.com</a></p>
+        <div class="social-links">
+          <a href="https://github.com/xed777" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="bio" id="bioContent">
-    <button class="close-btn" aria-label="Chiudi">&times;</button>
-    <div class="popup">
-      <h2>Chi sono</h2>
-      <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
-      </p>
-      <ul>
-        <li>Editing video & motion graphics</li>
-        <li>Graphic design e brand identity</li>
-        <li>Web design & interfacce utente (UI/UX)</li>
-      </ul>
-      <a class="btn-primary btn-download-cv" href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5" target="_blank">
-        📄 Scarica il mio CV
-      </a>
-    </div>
-  </section>
+    <section class="bio" id="bioContent" role="dialog" aria-hidden="true" aria-labelledby="bioBtn">
+      <button class="close-btn" aria-label="Chiudi sezione Chi sono">&times;</button>
+      <div class="popup">
+        <h2 id="bioHeading">Chi sono</h2>
+        <p>
+          Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
+        </p>
+        <ul>
+          <li>Editing video & motion graphics</li>
+          <li>Graphic design e brand identity</li>
+          <li>Web design & interfacce utente (UI/UX)</li>
+        </ul>
+        <a class="btn-primary btn-download-cv" href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5" target="_blank" rel="noopener noreferrer">
+          📄 Scarica il mio CV
+        </a>
+      </div>
+    </section>
+  </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
   </footer>
 
@@ -85,8 +87,9 @@
       isTransitioning = true;
 
       Object.values(buttons).forEach(id => {
-        document.getElementById(id).classList.remove("active");
-        document.getElementById(id).setAttribute('aria-hidden', 'true');
+        const el = document.getElementById(id);
+        el.classList.remove("active");
+        el.setAttribute('aria-hidden', 'true');
       });
 
       document.querySelectorAll(".menu button").forEach(b => {
@@ -127,11 +130,16 @@
     document.addEventListener("click", function (event) {
       const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form");
       const isCloseBtn = event.target.classList.contains("close-btn");
-      const justOpened = document.body.getAttribute('data-popup-opened');
 
       if (!isInsidePopup || isCloseBtn) {
-        document.querySelectorAll("section.active").forEach(section => section.classList.remove("active"));
-        document.querySelectorAll(".menu button.active").forEach(btn => btn.classList.remove("active"));
+        document.querySelectorAll("section.active").forEach(section => {
+          section.classList.remove("active");
+          section.setAttribute("aria-hidden", "true");
+        });
+        document.querySelectorAll(".menu button.active").forEach(btn => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-expanded", "false");
+        });
         unlockScroll();
       }
     });
