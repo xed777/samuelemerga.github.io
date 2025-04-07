@@ -10,6 +10,8 @@
   <style>
     :root {
       --font-body: 'Inter', sans-serif;
+      --yellow: #fcf300;
+      --black: #000;
     }
 
     * {
@@ -23,27 +25,24 @@
     }
 
     body {
-      background-color: black;
+      background-color: var(--black);
       color: white;
       font-family: var(--font-body);
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding-top: 6rem;
+      padding-top: 6.5rem;
       text-align: center;
       overflow-x: hidden;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      line-height: 1.7;
-      letter-spacing: 0.2px;
     }
 
     h1.logo {
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 700;
-      color: #fcf300;
+      color: var(--yellow);
       animation: typing 2s steps(10, end) forwards, blink 1s step-end 3;
-      border-right: 3px solid #fcf300;
+      border-right: 3px solid var(--yellow);
       width: 0;
       white-space: nowrap;
       overflow: hidden;
@@ -57,7 +56,7 @@
 
     @keyframes blink {
       0%, 100% { border-color: transparent; }
-      50% { border-color: #fcf300; }
+      50% { border-color: var(--yellow); }
     }
 
     nav.menu {
@@ -68,10 +67,10 @@
       background: rgba(0, 0, 0, 0.85);
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
+      gap: 2.5rem;
+      padding: 1rem 0.5rem;
       z-index: 9999;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       backdrop-filter: blur(8px);
     }
 
@@ -82,16 +81,16 @@
       font: inherit;
       cursor: pointer;
       transition: transform 0.3s, color 0.3s;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
 
     .menu button:hover {
       transform: translateY(-5px);
-      text-shadow: 0 0 10px #fcf300;
+      text-shadow: 0 0 10px var(--yellow);
     }
 
     .menu button.active {
-      color: #fcf300;
+      color: var(--yellow);
     }
 
     section.video,
@@ -101,15 +100,16 @@
       transform: translateY(20px) scale(0.98);
       transition: all 0.5s ease;
       display: none;
-      margin: 2rem auto;
-      width: 100%;
-      max-width: 700px;
-      background: #fcf300;
+      margin: 2.5rem auto;
+      width: 90%;
+      max-width: 720px;
+      background: var(--yellow);
       color: black;
       padding: 2rem;
       border-radius: 1rem;
       text-align: left;
       box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      font-size: 1rem;
     }
 
     section.active {
@@ -125,23 +125,28 @@
     }
 
     .popup h2 {
-      margin-top: 0;
+      margin-bottom: 1rem;
       font-size: 1.5rem;
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .popup p, .popup ul {
+      max-width: 640px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .popup ul {
+      padding-left: 1rem;
     }
 
     .popup form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      margin-top: 1rem;
     }
 
     .popup label {
       font-weight: 600;
-      font-size: 1rem;
     }
 
     .popup input,
@@ -149,107 +154,66 @@
       padding: 0.5rem;
       border: 1px solid black;
       border-radius: 5px;
-      font-size: 1rem;
     }
 
     .popup button {
-      margin-top: 1rem;
       background: black;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 1.05rem;
-      letter-spacing: 0.8px;
     }
 
-    .btn {
-      display: block;
-      background-color: black;
+    .btn-download-cv {
+      display: inline-block;
+      background: black;
       color: white;
       padding: 0.7rem 1.2rem;
       border-radius: 8px;
-      text-align: center;
-      margin: 1.5rem auto 0;
-      font-size: 1.05rem;
       text-decoration: none;
+      transition: transform 0.3s ease;
     }
 
-    .btn:hover,
-    .popup button:hover {
-      filter: brightness(1.2);
-    }
-
-    .cursor-follower {
-      width: 20px;
-      height: 20px;
-      background-color: #fcf300;
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 10000;
-      transform: translate(-50%, -50%);
-      transition: transform 0.05s ease, background-color 0.3s ease;
-    }
-
-    .cursor-follower.dark-cursor {
-      background-color: black;
-    }
-
-    footer {
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 3rem;
-      padding-bottom: 2rem;
+    .btn-download-cv:hover {
+      transform: scale(1.05);
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 1rem;
     }
 
-    .social-links a {
-      color: black;
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s;
-    }
-
-    .social-links a:hover {
-      border-color: black;
+    footer {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 2rem;
+      text-align: center;
+      padding-bottom: 1.5rem;
     }
 
     @media (max-width: 600px) {
       body {
-        font-size: 1.1rem;
         padding-top: 6rem;
         padding-left: 1rem;
         padding-right: 1rem;
-      }
-
-      h1.logo {
-        margin-top: 1rem;
+        font-size: 1rem;
       }
 
       nav.menu {
         flex-direction: column;
-        gap: 0.5rem;
-        font-size: 1rem;
-        padding: 0.6rem 0;
+        gap: 0.6rem;
+        font-size: 0.95rem;
       }
 
       section.video,
       section.form,
       section.bio {
-        margin: 1rem 0;
-        padding: 1rem;
-        border-radius: 0.8rem;
+        padding: 1.2rem;
+        font-size: 0.95rem;
+        margin: 1.5rem auto;
       }
     }
   </style>
@@ -258,9 +222,9 @@
   <h1 class="logo">XED</h1>
 
   <nav class="menu">
-    <button id="showreelBtn" aria-controls="showreelContent" aria-expanded="false">SHOWREEL</button>
-    <button id="contactBtn" aria-controls="contactForm" aria-expanded="false">CONTACT ME</button>
-    <button id="bioBtn" aria-controls="bioContent" aria-expanded="false">CHI SONO</button>
+    <button id="showreelBtn">SHOWREEL</button>
+    <button id="contactBtn">CONTACT ME</button>
+    <button id="bioBtn">CHI SONO</button>
   </nav>
 
   <section class="video" id="showreelContent">
@@ -270,16 +234,16 @@
   <section class="form" id="contactForm">
     <div class="popup">
       <h2>Contattami</h2>
-      <form id="contactReal" action="https://formspree.io/f/xjkyanzz" method="POST">
+      <form action="https://formspree.io/f/xjkyanzz" method="POST">
         <label for="name">Nome</label>
-        <input type="text" id="name" name="name" placeholder="Nome" required>
+        <input type="text" id="name" name="name" required>
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="email" id="email" name="email" required>
         <label for="message">Messaggio</label>
-        <textarea id="message" name="message" rows="3" placeholder="Messaggio" required></textarea>
+        <textarea id="message" name="message" rows="4" required></textarea>
         <button type="submit">Invia</button>
       </form>
-      <p style="margin-top: 1rem;">📧 Email: <a href="mailto:samuelemerga@gmail.com">samuelemerga@gmail.com</a></p>
+      <p>Email: <a href="mailto:samuelemerga@gmail.com">samuelemerga@gmail.com</a></p>
       <div class="social-links">
         <a href="https://github.com/xed777" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
@@ -291,18 +255,15 @@
     <div class="popup">
       <h2>Chi sono</h2>
       <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
-        Utilizzo il pacchetto Adobe (After Effects, Premiere Pro, Illustrator, Photoshop) per creare contenuti dinamici e visivamente coerenti.
+        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno. Utilizzo il pacchetto Adobe (After Effects, Premiere Pro, Illustrator, Photoshop) per creare contenuti dinamici e visivamente coerenti.
       </p>
       <ul>
         <li>Editing video & motion graphics</li>
         <li>Graphic design e brand identity</li>
         <li>Web design & interfacce utente (UI/UX)</li>
       </ul>
-      <a href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5"
-         class="btn btn-download-cv"
-         target="_blank">
-         📄 Scarica il mio CV
+      <a class="btn-download-cv" href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5" target="_blank">
+        📄 Scarica il mio CV
       </a>
     </div>
   </section>
@@ -311,68 +272,20 @@
     <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
   </footer>
 
-  <div class="cursor-follower" id="cursorFollower"></div>
-
   <script>
-    const cursor = document.getElementById("cursorFollower");
+    const buttons = {
+      showreelBtn: "showreelContent",
+      contactBtn: "contactForm",
+      bioBtn: "bioContent"
+    };
 
-    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    if (!isTouchDevice()) {
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.top = e.clientY + "px";
-        cursor.style.left = e.clientX + "px";
+    Object.keys(buttons).forEach(btnId => {
+      document.getElementById(btnId).addEventListener("click", () => {
+        Object.values(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
+        Object.keys(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
+        document.getElementById(buttons[btnId]).classList.add("active");
+        document.getElementById(btnId).classList.add("active");
       });
-
-      const darkAreas = [
-        ...document.querySelectorAll(".popup"),
-        ...document.querySelectorAll(".btn"),
-        ...document.querySelectorAll(".popup button")
-      ];
-      darkAreas.forEach(el => {
-        el.addEventListener("mouseenter", () => cursor.classList.add("dark-cursor"));
-        el.addEventListener("mouseleave", () => cursor.classList.remove("dark-cursor"));
-      });
-    } else {
-      cursor.style.display = "none";
-    }
-
-    const sections = ["showreelContent", "contactForm", "bioContent"];
-
-    function toggleSection(id) {
-      sections.forEach(section => {
-        const el = document.getElementById(section);
-        const btn = document.getElementById(section.replace("Content", "Btn").replace("Form", "Btn"));
-        const isActive = section === id && !el.classList.contains("active");
-
-        el.classList.toggle("active", isActive);
-        btn.classList.toggle("active", isActive);
-        btn.setAttribute("aria-expanded", isActive);
-      });
-    }
-
-    document.getElementById("showreelBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("showreelContent");
-    });
-    document.getElementById("contactBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("contactForm");
-    });
-    document.getElementById("bioBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("bioContent");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest('.popup') && !e.target.closest('.menu button')) {
-        sections.forEach(id => {
-          document.getElementById(id).classList.remove("active");
-          const btn = document.getElementById(id.replace("Content", "Btn").replace("Form", "Btn"));
-          btn.classList.remove("active");
-          btn.setAttribute("aria-expanded", "false");
-        });
-      }
     });
   </script>
 </body>
