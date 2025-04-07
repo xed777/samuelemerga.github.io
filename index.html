@@ -10,13 +10,19 @@
   <style>
     :root {
       --font-body: 'Inter', sans-serif;
-
-      /* Palette personalizzata */
       --color-bg: #0e1424;
       --color-text: #d3d9dc;
       --color-accent: #587284;
       --color-secondary: #adbcc6;
       --color-soft: #ececec;
+    }
+
+    body.light {
+      --color-bg: #f4f4f4;
+      --color-text: #1a1a1a;
+      --color-accent: #3a6ea5;
+      --color-secondary: #444;
+      --color-soft: #ffffff;
     }
 
     * {
@@ -25,9 +31,8 @@
       padding: 0;
     }
 
-    html, body {
-      font-size: 16px;
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -41,6 +46,7 @@
       text-align: center;
       overflow-x: hidden;
       padding-top: 6rem;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     h1.logo {
@@ -50,6 +56,19 @@
       white-space: nowrap;
       height: 4rem;
       min-height: 3rem;
+    }
+
+    #themeToggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10000;
+      padding: 0.5rem 1rem;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     nav.menu {
@@ -89,11 +108,15 @@
     section.video,
     section.form,
     section.bio {
+      position: absolute;
+      top: 6rem;
+      left: 0;
+      right: 0;
+      margin: auto;
       opacity: 0;
+      visibility: hidden;
       transform: translateY(20px) scale(0.98);
-      transition: all 0.5s ease;
-      display: none;
-      margin: 2rem auto;
+      transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
       width: 90%;
       max-width: 720px;
       background: var(--color-soft);
@@ -103,12 +126,15 @@
       text-align: left;
       box-shadow: 0 5px 15px rgba(0,0,0,0.4);
       font-size: 1rem;
+      z-index: 10;
     }
 
     section.active {
-      display: block;
       opacity: 1;
       transform: translateY(0) scale(1);
+      visibility: visible;
+      position: relative;
+      z-index: 20;
     }
 
     .video iframe {
@@ -229,7 +255,7 @@
     <button id="contactBtn">CONTACT ME</button>
     <button id="bioBtn">CHI SONO</button>
   </nav>
-
+  <button id="themeToggle">🌓</button>
   <h1 class="logo"><span id="typed"></span></h1>
 
   <section class="video" id="showreelContent">
@@ -260,7 +286,7 @@
     <div class="popup">
       <h2>Chi sono</h2>
       <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno. Utilizzo il pacchetto Adobe (After Effects, Premiere Pro, Illustrator, Photoshop) per creare contenuti dinamici e visivamente coerenti.
+        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
       </p>
       <ul>
         <li>Editing video & motion graphics</li>
@@ -277,57 +303,68 @@
     <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
   </footer>
 
-  <!-- Libreria Typed.js -->
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  const buttons = {
-    showreelBtn: "showreelContent",
-    contactBtn: "contactForm",
-    bioBtn: "bioContent"
-  };
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    const buttons = {
+      showreelBtn: "showreelContent",
+      contactBtn: "contactForm",
+      bioBtn: "bioContent"
+    };
 
-  // Apri popup correttamente
-  Object.keys(buttons).forEach(btnId => {
-    const btn = document.getElementById(btnId);
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      // Apri il popup relativo
-      Object.values(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
-      Object.keys(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
-      document.getElementById(buttons[btnId]).classList.add("active");
-      btn.classList.add("active");
+    const toggleBtn = document.getElementById("themeToggle");
+    const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-      // Segna che un popup è appena stato aperto
-      document.body.setAttribute('data-popup-opened', 'true');
-      setTimeout(() => {
-        document.body.removeAttribute('data-popup-opened');
-      }, 100); // Ritardo breve per non interferire con il click
-    });
-  });
-
-  // Effetto macchina da scrivere
-  document.addEventListener("DOMContentLoaded", function () {
-    new Typed('#typed', {
-      strings: ['XED', ''],
-      typeSpeed: 150,
-      backSpeed: 80,
-      backDelay: 2000,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|'
-    });
-  });
-
-  // Chiudi il popup cliccando fuori
-  document.addEventListener("click", function (event) {
-    const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form");
-    const justOpened = document.body.getAttribute('data-popup-opened');
-
-    if (!isInsidePopup && !justOpened) {
-      document.querySelectorAll("section.active").forEach(section => section.classList.remove("active"));
-      document.querySelectorAll(".menu button.active").forEach(btn => btn.classList.remove("active"));
+    if (localStorage.getItem("theme") === "light" || (!localStorage.getItem("theme") && !userPrefersDark)) {
+      document.body.classList.add("light");
     }
-  });
-</script>
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+    });
+
+    const lockScroll = () => document.body.style.overflow = "hidden";
+    const unlockScroll = () => document.body.style.overflow = "";
+
+    Object.keys(buttons).forEach(btnId => {
+      const btn = document.getElementById(btnId);
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        Object.values(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
+        document.querySelectorAll(".menu button").forEach(b => b.classList.remove("active"));
+        document.getElementById(buttons[btnId]).classList.add("active");
+        btn.classList.add("active");
+
+        lockScroll();
+        document.body.setAttribute('data-popup-opened', 'true');
+        setTimeout(() => {
+          document.body.removeAttribute('data-popup-opened');
+        }, 100);
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed('#typed', {
+        strings: ['XED', ''],
+        typeSpeed: 150,
+        backSpeed: 80,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form, #themeToggle");
+      const justOpened = document.body.getAttribute('data-popup-opened');
+
+      if (!isInsidePopup && !justOpened) {
+        document.querySelectorAll("section.active").forEach(section => section.classList.remove("active"));
+        document.querySelectorAll(".menu button.active").forEach(btn => btn.classList.remove("active"));
+        unlockScroll();
+      }
+    });
+  </script>
 </body>
 </html>
