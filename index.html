@@ -6,14 +6,13 @@
   <title>XED - Portfolio</title>
   <meta name="description" content="Portfolio di Samuele Merga: Showreel e contatti.">
   <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --font-heading: 'Anton', sans-serif;
       --font-body: 'Inter', sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       font-size: 16px;
@@ -26,26 +25,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
       min-height: 100vh;
-      margin: 0;
+      padding-top: 5rem;
       text-align: center;
       overflow-x: hidden;
-      padding-top: 3rem;
       font-size: clamp(1rem, 2vw, 1.15rem);
       line-height: 1.7;
       letter-spacing: 0.2px;
     }
 
     h1.logo {
-      font-family: var(--font-heading);
       font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
+      font-weight: 700;
+      color: #fcf300;
+      animation: typing 2s steps(10, end) forwards, blink 1s step-end 3;
       border-right: 3px solid #fcf300;
       width: 0;
-      animation: typing 2s steps(10, end) forwards, blink 1s step-end 3;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     @keyframes typing {
@@ -59,12 +56,17 @@
     }
 
     nav.menu {
-      font-size: 2rem;
-      margin-top: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.85);
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
       gap: 2rem;
+      padding: 1rem 0;
+      z-index: 9999;
+      font-size: 1.2rem;
     }
 
     .menu button {
@@ -86,7 +88,9 @@
       color: #fcf300;
     }
 
-    section.video, section.form, section.bio {
+    section.video,
+    section.form,
+    section.bio {
       opacity: 0;
       transform: translateY(20px) scale(0.98);
       transition: all 0.5s ease;
@@ -94,17 +98,12 @@
       margin: 2rem auto;
       width: 100%;
       max-width: 700px;
-      height: auto;
-      min-height: 300px;
       background: #fcf300;
       color: black;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 1rem;
       text-align: left;
       box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      letter-spacing: 0.3px;
     }
 
     section.active {
@@ -116,36 +115,31 @@
     .video iframe {
       width: 100%;
       aspect-ratio: 16/9;
-      pointer-events: auto;
       border: none;
-      loading: lazy;
     }
 
     .popup h2 {
       margin-top: 0;
       font-size: 1.5rem;
       text-align: center;
-      letter-spacing: 1px;
       font-weight: 600;
+      letter-spacing: 1px;
     }
 
     .popup form {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 1rem;
-      flex-wrap: wrap;
+      margin-top: 1rem;
     }
 
     .popup label {
-      display: block;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 1rem;
-      letter-spacing: 0.5px;
     }
 
     .popup input,
     .popup textarea {
-      flex: 1 1 100%;
       padding: 0.5rem;
       border: 1px solid black;
       border-radius: 5px;
@@ -153,12 +147,11 @@
     }
 
     .popup button {
-      flex: 1 1 100%;
       margin-top: 1rem;
       background: black;
       color: white;
       border: none;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
       font-size: 1.05rem;
@@ -171,30 +164,15 @@
       color: white;
       padding: 0.7rem 1.2rem;
       border-radius: 8px;
-      font-family: var(--font-body);
       text-align: center;
       margin: 1.5rem auto 0;
-      width: fit-content;
       font-size: 1.05rem;
       text-decoration: none;
-      letter-spacing: 0.6px;
     }
 
     .btn:hover,
     .popup button:hover {
       filter: brightness(1.2);
-    }
-
-    .btn-download-cv {
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-
-    .btn-download-cv:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-download-cv:active {
-      transform: scale(0.95);
     }
 
     .cursor-follower {
@@ -219,16 +197,45 @@
       font-size: 0.9rem;
       color: #888;
       margin-top: 3rem;
+      padding-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .social-links a:hover {
+      border-color: black;
     }
 
     @media (max-width: 600px) {
-      section.video, section.form, section.bio {
+      body {
+        font-size: 1.1rem;
+      }
+
+      nav.menu {
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1rem;
+        padding: 0.8rem 0;
+      }
+
+      section.video,
+      section.form,
+      section.bio {
         margin: 1rem;
         padding: 1rem;
-        border-radius: 0.8rem;
-      }
-      .video iframe {
-        border-radius: 0.5rem;
       }
     }
   </style>
@@ -258,6 +265,11 @@
         <textarea id="message" name="message" rows="3" placeholder="Messaggio" required></textarea>
         <button type="submit">Invia</button>
       </form>
+      <p style="margin-top: 1rem;">📧 Email: <a href="mailto:samuelemerga@gmail.com">samuelemerga@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://github.com/xed777" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+      </div>
     </div>
   </section>
 
@@ -265,9 +277,14 @@
     <div class="popup">
       <h2>Chi sono</h2>
       <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno. <br>
-        Con una forte attenzione al design e alla comunicazione, realizzo progetti che uniscono estetica e funzionalità.
+        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
+        Utilizzo il pacchetto Adobe (After Effects, Premiere Pro, Illustrator, Photoshop) per creare contenuti dinamici e visivamente coerenti.
       </p>
+      <ul>
+        <li>Editing video & motion graphics</li>
+        <li>Graphic design e brand identity</li>
+        <li>Web design & interfacce utente (UI/UX)</li>
+      </ul>
       <a href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5"
          class="btn btn-download-cv"
          target="_blank">
@@ -285,9 +302,7 @@
   <script>
     const cursor = document.getElementById("cursorFollower");
 
-    const isTouchDevice = () => {
-      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    };
+    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (!isTouchDevice()) {
       document.addEventListener("mousemove", (e) => {
