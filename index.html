@@ -278,7 +278,7 @@
   </footer>
 
   <!-- Libreria Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+ <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   const buttons = {
     showreelBtn: "showreelContent",
@@ -286,14 +286,22 @@
     bioBtn: "bioContent"
   };
 
+  // Apri popup correttamente
   Object.keys(buttons).forEach(btnId => {
     const btn = document.getElementById(btnId);
     btn.addEventListener("click", (e) => {
-      e.stopPropagation(); // 🔒 blocca la propagazione per evitare chiusura
+      e.preventDefault();
+      // Apri il popup relativo
       Object.values(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
       Object.keys(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
       document.getElementById(buttons[btnId]).classList.add("active");
-      document.getElementById(btnId).classList.add("active");
+      btn.classList.add("active");
+
+      // Segna che un popup è appena stato aperto
+      document.body.setAttribute('data-popup-opened', 'true');
+      setTimeout(() => {
+        document.body.removeAttribute('data-popup-opened');
+      }, 100); // Ritardo breve per non interferire con il click
     });
   });
 
@@ -312,8 +320,10 @@
 
   // Chiudi il popup cliccando fuori
   document.addEventListener("click", function (event) {
-    const isInsidePopup = event.target.closest("section.active, nav.menu, button, input, textarea, a, iframe, label, form");
-    if (!isInsidePopup) {
+    const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form");
+    const justOpened = document.body.getAttribute('data-popup-opened');
+
+    if (!isInsidePopup && !justOpened) {
       document.querySelectorAll("section.active").forEach(section => section.classList.remove("active"));
       document.querySelectorAll(".menu button.active").forEach(btn => btn.classList.remove("active"));
     }
