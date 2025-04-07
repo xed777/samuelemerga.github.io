@@ -17,14 +17,6 @@
       --color-soft: #ececec;
     }
 
-    body.light {
-      --color-bg: #f4f4f4;
-      --color-text: #1a1a1a;
-      --color-accent: #3a6ea5;
-      --color-secondary: #444;
-      --color-soft: #ffffff;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -56,19 +48,6 @@
       white-space: nowrap;
       height: 4rem;
       min-height: 3rem;
-    }
-
-    #themeToggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10000;
-      padding: 0.5rem 1rem;
-      background: var(--color-accent);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
     }
 
     nav.menu {
@@ -255,7 +234,7 @@
     <button id="contactBtn">CONTACT ME</button>
     <button id="bioBtn">CHI SONO</button>
   </nav>
-  <button id="themeToggle">🌓</button>
+
   <h1 class="logo"><span id="typed"></span></h1>
 
   <section class="video" id="showreelContent">
@@ -311,18 +290,6 @@
       bioBtn: "bioContent"
     };
 
-    const toggleBtn = document.getElementById("themeToggle");
-    const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (localStorage.getItem("theme") === "light" || (!localStorage.getItem("theme") && !userPrefersDark)) {
-      document.body.classList.add("light");
-    }
-
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
-    });
-
     const lockScroll = () => document.body.style.overflow = "hidden";
     const unlockScroll = () => document.body.style.overflow = "";
 
@@ -356,7 +323,7 @@
     });
 
     document.addEventListener("click", function (event) {
-      const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form, #themeToggle");
+      const isInsidePopup = event.target.closest("section.active, nav.menu, .menu button, input, textarea, a, iframe, label, form");
       const justOpened = document.body.getAttribute('data-popup-opened');
 
       if (!isInsidePopup && !justOpened) {
