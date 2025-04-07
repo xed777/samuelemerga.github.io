@@ -1,334 +1,90 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XED - Portfolio</title>
-  <meta name="description" content="Portfolio di Samuele Merga: Showreel e contatti.">
-  <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samuele Merga - CV</title>
   <style>
-    :root {
-      --font-heading: 'Anton', sans-serif;
-      --font-body: 'Inter', sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      font-size: 16px;
-    }
-
     body {
-      background-color: black;
-      color: white;
-      font-family: var(--font-body);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px 0;
       text-align: center;
-      overflow-x: hidden;
-      padding-top: 3rem;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      line-height: 1.7;
-      letter-spacing: 0.2px;
     }
 
-    h1.logo {
-      font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #fcf300;
-      width: 0;
-      animation: typing 2s steps(10, end) forwards, blink 1s step-end 3;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 9rem }
-    }
-
-    @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: #fcf300; }
-    }
-
-    nav.menu {
-      font-size: 2rem;
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .menu button {
-      background: none;
-      border: none;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      transition: transform 0.3s, color 0.3s;
-      letter-spacing: 1px;
-    }
-
-    .menu button:hover {
-      transform: translateY(-5px);
-      text-shadow: 0 0 10px #fcf300;
-    }
-
-    .menu button.active {
-      color: #fcf300;
-    }
-
-    section.video, section.form, section.bio {
-      opacity: 0;
-      transform: translateY(20px) scale(0.98);
-      transition: all 0.5s ease;
-      display: none;
-      margin: 2rem auto;
-      width: 100%;
-      max-width: 700px;
-      height: auto;
-      min-height: 300px;
-      background: #fcf300;
-      color: black;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      text-align: left;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      letter-spacing: 0.3px;
-    }
-
-    section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .video iframe {
-      width: 100%;
-      aspect-ratio: 16/9;
-      pointer-events: auto;
-      border: none;
-      loading: lazy;
-    }
-
-    .popup h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
+    main {
+      padding: 40px 20px;
       text-align: center;
-      letter-spacing: 1px;
+    }
+
+    .btn-download-cv {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
       font-weight: 600;
-    }
-
-    .popup form {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .popup label {
-      display: block;
-      font-weight: bold;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-    }
-
-    .popup input,
-    .popup textarea {
-      flex: 1 1 100%;
-      padding: 0.5rem;
-      border: 1px solid black;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .popup button {
-      flex: 1 1 100%;
-      margin-top: 1rem;
-      background: black;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1.05rem;
-      letter-spacing: 0.8px;
-    }
-
-    .btn {
-      display: block;
-      background-color: black;
-      color: white;
-      padding: 0.7rem 1.2rem;
+      color: #fff;
+      background-color: #007BFF;
       border-radius: 8px;
-      font-family: var(--font-body);
-      text-align: center;
-      margin: 1.5rem auto 0;
-      width: fit-content;
-      font-size: 1.05rem;
       text-decoration: none;
-      letter-spacing: 0.6px;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .btn:hover,
-    .popup button:hover {
-      filter: brightness(1.2);
+    .btn-download-cv:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
     }
 
-    .cursor-follower {
-      width: 20px;
-      height: 20px;
-      background-color: #fcf300;
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 10000;
-      transform: translate(-50%, -50%);
-      transition: transform 0.05s ease, background-color 0.3s ease;
+    .btn-download-cv:active {
+      transform: scale(0.95);
     }
 
-    .cursor-follower.dark-cursor {
-      background-color: black;
+    /* Responsive: centra il bottone su mobile */
+    @media (max-width: 600px) {
+      .btn-download-cv {
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+      }
     }
 
     footer {
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 600px) {
-      section.video, section.form, section.bio {
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 0.8rem;
-      }
-      .video iframe {
-        border-radius: 0.5rem;
-      }
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1 class="logo">XED</h1>
 
-  <nav class="menu">
-    <button id="showreelBtn" aria-controls="showreelContent" aria-expanded="false">SHOWREEL</button>
-    <button id="contactBtn" aria-controls="contactForm" aria-expanded="false">CONTACT ME</button>
-    <button id="bioBtn" aria-controls="bioContent" aria-expanded="false">CHI SONO</button>
-  </nav>
+  <header>
+    <h1>Benvenuto nel sito di Samuele Merga</h1>
+    <p>Scarica il mio curriculum vitae</p>
+  </header>
 
-  <section class="video" id="showreelContent">
-    <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
-  </section>
-
-  <section class="form" id="contactForm">
-    <div class="popup">
-      <h2>Contattami</h2>
-      <form id="contactReal" action="https://formspree.io/f/xjkyanzz" method="POST">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" placeholder="Nome" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <label for="message">Messaggio</label>
-        <textarea id="message" name="message" rows="3" placeholder="Messaggio" required></textarea>
-        <button type="submit">Invia</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="bio" id="bioContent">
-    <div class="popup">
-      <h2>Chi sono</h2>
-      <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno. <br>
-        Con una forte attenzione al design e alla comunicazione, realizzo progetti che uniscono estetica e funzionalità.
-      </p>
-      <a href="CV-Samuele-Merga.pdf" download class="btn">Scarica il mio CV</a>
-    </div>
-  </section>
+  <main>
+    <!-- Bottone per scaricare il CV -->
+    <a href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5" 
+       class="btn-download-cv" 
+       target="_blank">
+       📄 Scarica il mio CV
+    </a>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
+    &copy; 2025 Samuele Merga. Tutti i diritti riservati.
   </footer>
 
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <script>
-    const cursor = document.getElementById("cursorFollower");
-
-    const isTouchDevice = () => {
-      return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    };
-
-    if (!isTouchDevice()) {
-      document.addEventListener("mousemove", (e) => {
-        cursor.style.top = e.clientY + "px";
-        cursor.style.left = e.clientX + "px";
-      });
-
-      const darkAreas = [
-        ...document.querySelectorAll(".popup"),
-        ...document.querySelectorAll(".btn"),
-        ...document.querySelectorAll(".popup button")
-      ];
-      darkAreas.forEach(el => {
-        el.addEventListener("mouseenter", () => cursor.classList.add("dark-cursor"));
-        el.addEventListener("mouseleave", () => cursor.classList.remove("dark-cursor"));
-      });
-    } else {
-      cursor.style.display = "none";
-    }
-
-    const sections = ["showreelContent", "contactForm", "bioContent"];
-
-    function toggleSection(id) {
-      sections.forEach(section => {
-        const el = document.getElementById(section);
-        const btn = document.getElementById(section.replace("Content", "Btn").replace("Form", "Btn"));
-        const isActive = section === id && !el.classList.contains("active");
-
-        el.classList.toggle("active", isActive);
-        btn.classList.toggle("active", isActive);
-        btn.setAttribute("aria-expanded", isActive);
-      });
-    }
-
-    document.getElementById("showreelBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("showreelContent");
-    });
-    document.getElementById("contactBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("contactForm");
-    });
-    document.getElementById("bioBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleSection("bioContent");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest('.popup') && !e.target.closest('.menu button')) {
-        sections.forEach(id => {
-          document.getElementById(id).classList.remove("active");
-          const btn = document.getElementById(id.replace("Content", "Btn").replace("Form", "Btn"));
-          btn.classList.remove("active");
-          btn.setAttribute("aria-expanded", "false");
-        });
-      }
-    });
-  </script>
 </body>
 </html>
