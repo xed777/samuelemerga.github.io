@@ -16,9 +16,23 @@
       justify-content: center;
       max-width: 720px;
       width: 90%;
-      height: 600px;
+      height: auto;
       padding: 2rem;
       box-sizing: border-box;
+    }
+
+    .popup {
+      background: var(--color-soft);
+      color: var(--color-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 100%;
+      height: 500px;
+      overflow-y: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     section.video iframe {
@@ -73,13 +87,15 @@
   <main>
     <section class="video" id="showreelContent" role="dialog" aria-hidden="true" aria-labelledby="showreelBtn">
       <button class="close-btn" aria-label="Chiudi Showreel">&times;</button>
-      <h2 id="showreelHeading">Showreel</h2>
-      <iframe title="Video Showreel" src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
+      <div class="popup">
+        <h2 id="showreelHeading">Showreel</h2>
+        <iframe title="Video Showreel" src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
+      </div>
     </section>
 
     <section class="form" id="contactForm" role="dialog" aria-hidden="true" aria-labelledby="contactBtn">
       <button class="close-btn" aria-label="Chiudi modulo di contatto">&times;</button>
-      <div class="popup" style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+      <div class="popup">
         <h2 id="contactHeading">Contattami</h2>
         <form action="https://formspree.io/f/xqkrbwlr" method="POST">
           <label for="name">Nome</label>
@@ -100,7 +116,7 @@
 
     <section class="bio" id="bioContent" role="dialog" aria-hidden="true" aria-labelledby="bioBtn">
       <button class="close-btn" aria-label="Chiudi sezione Chi sono">&times;</button>
-      <div class="popup" style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center;">
+      <div class="popup">
         <h2 id="bioHeading">Chi sono</h2>
         <p>
           Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
