@@ -43,10 +43,11 @@
       color: var(--yellow);
       animation: typing 2s steps(10, end) forwards, blink 1s step-end 3;
       border-right: 3px solid var(--yellow);
-      width: 0;
       white-space: nowrap;
       overflow: hidden;
       margin-bottom: 2rem;
+      max-width: 100vw;
+      overflow-wrap: break-word;
     }
 
     @keyframes typing {
@@ -206,6 +207,13 @@
         flex-direction: column;
         gap: 0.6rem;
         font-size: 0.95rem;
+      }
+
+      h1.logo {
+        font-size: 2.5rem;
+        width: auto;
+        border-right: none;
+        animation: none;
       }
 
       section.video,
