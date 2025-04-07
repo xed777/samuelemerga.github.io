@@ -42,22 +42,9 @@
       font-size: clamp(2.5rem, 8vw, 4rem);
       font-weight: 700;
       color: var(--yellow);
-      border-right: 3px solid var(--yellow);
       white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 2s steps(10, end) forwards, blink 1s step-end infinite;
-    }
-
-   @keyframes typing {
-  from { width: 0; }
-  to { width: 4ch; }
-}
-
-
-    @keyframes blink {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: var(--yellow); }
+      height: 4rem;
+      min-height: 3rem;
     }
 
     nav.menu {
@@ -225,7 +212,7 @@
     <button id="bioBtn">CHI SONO</button>
   </nav>
 
-  <h1 class="logo">XED</h1>
+  <h1 class="logo"><span id="typed"></span></h1>
 
   <section class="video" id="showreelContent">
     <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
@@ -272,6 +259,8 @@
     <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
   </footer>
 
+  <!-- Libreria Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     const buttons = {
       showreelBtn: "showreelContent",
@@ -285,6 +274,19 @@
         Object.keys(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
         document.getElementById(buttons[btnId]).classList.add("active");
         document.getElementById(btnId).classList.add("active");
+      });
+    });
+
+    // Effetto macchina da scrivere con cancellazione
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed('#typed', {
+        strings: ['XED', ''],
+        typeSpeed: 150,
+        backSpeed: 80,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
       });
     });
   </script>
