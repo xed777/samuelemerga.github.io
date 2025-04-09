@@ -1,100 +1,122 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XED - Portfolio</title>
-  <meta name="description" content="Portfolio di Samuele Merga: Showreel, progetti e contatti.">
-  <meta name="keywords" content="Samuele Merga, XED, video editor, motion graphics, portfolio, UI UX designer">
-  <meta name="author" content="Samuele Merga">
-  <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuele Merga – Portfolio</title>
+  <style>
+    /* Reset base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: #f2f2f2;
+      color: #1a1a1a;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #33475b;
+    }
+
+    .chi-sono p {
+      margin-bottom: 1rem;
+    }
+
+    .chi-sono ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.2rem;
+    }
+
+    .chi-sono li {
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-button {
+      display: inline-block;
+      background-color: #5a7d94;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #4a6b80;
+    }
+
+    .last-update {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .card {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav class="menu">
-    <button id="showreelBtn">SHOWREEL</button>
-    <button id="contactBtn">CONTACT ME</button>
-    <button id="bioBtn">CHI SONO</button>
-  </nav>
+  <div class="container">
 
-  <h1 class="logo"><span id="typed"></span></h1>
-
-  <section class="video" id="showreelContent">
-    <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
-  </section>
-
-  <section class="form" id="contactForm">
-    <div class="popup">
-      <h2>Contattami</h2>
-      <form action="https://formspree.io/f/xqkrbwlr" method="POST">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Messaggio</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Invia</button>
-      </form>
-      <p>Email: <a href="mailto:samuelemerga4@gmail.com">samuelemerga4@gmail.com</a></p>
-      <div class="social-links">
-        <a href="https://github.com/xed777" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="bio" id="bioContent">
-    <div class="popup">
+    <!-- Sezione Chi sono -->
+    <section class="card chi-sono">
       <h2>Chi sono</h2>
-      <p>
-        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
-      </p>
+      <p>Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.</p>
       <ul>
         <li>Editing video & motion graphics</li>
         <li>Graphic design e brand identity</li>
         <li>Web design & UI/UX</li>
       </ul>
-      <a class="btn-download-cv" href="CV-Samuele-Merga.pdf" target="_blank">
-        📄 Scarica il mio CV
-      </a>
-      <p style="margin-top:1rem; font-size:0.9rem;">Ultimo aggiornamento: Aprile 2025</p>
-    </div>
-  </section>
+      <a href="#" class="cv-button">📄 Scarica il mio CV</a>
+      <p class="last-update">Ultimo aggiornamento: Aprile 2025</p>
+    </section>
 
-  <section class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="project">
-      <h3>🎬 Spot pubblicitario - Festival Creativo</h3>
-      <p>Montaggio e motion graphics per un evento culturale con oltre 10.000 partecipanti.</p>
-    </div>
-    <div class="project">
-      <h3>📱 UI/UX Design - App Fitness</h3>
-      <p>Design completo dell'interfaccia utente per un'app mobile intuitiva e moderna.</p>
-    </div>
-    <div class="project">
-      <h3>🎥 Video musicale - Indie Artist</h3>
-      <p>Editing creativo e animazione visual per un videoclip distribuito su YouTube.</p>
-    </div>
-  </section>
+    <!-- Sezione Portfolio (facoltativa) -->
+    <section class="card">
+      <h2>Portfolio</h2>
+      <p>🎬 <strong>Spot pubblicitario - Festival Creativo</strong><br>
+        Montaggio e motion graphics per un evento culturale con oltre 10.000 partecipanti.</p>
+      <br>
+      <p>📱 <strong>UI/UX Design - App Fitness</strong><br>
+        Design completo dell'interfaccia utente per un'app mobile intuitiva e moderna.</p>
+      <br>
+      <p>🎥 <strong>Video musicale - Indie Artist</strong><br>
+        Editing creativo e animazione visual per un videoclip distribuito su YouTube.</p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
-  </footer>
-
-  <!-- Bottone fluttuante contatto -->
-  <a href="#contactForm" class="floating-contact">📬</a>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="script.js"></script>
+  </div>
 </body>
 </html>
