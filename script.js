@@ -1,35 +1,28 @@
-// SHOWREEL
-document.getElementById("showreelBtn").addEventListener("click", function () {
-  const section = document.getElementById("showreelContent");
-  section.classList.add("show");
-  section.setAttribute("aria-hidden", "false");
+const sections = {
+  showreelBtn: "showreelContent",
+  projectsBtn: "projectsContent",
+  contactBtn: "contactForm",
+  bioBtn: "bioContent"
+};
+
+// Apri popup
+Object.entries(sections).forEach(([btnId, sectionId]) => {
+  const btn = document.getElementById(btnId);
+  const section = document.getElementById(sectionId);
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".popup-section").forEach(s => {
+      s.classList.remove("show");
+      s.setAttribute("aria-hidden", "true");
+    });
+    section.classList.add("show");
+    section.setAttribute("aria-hidden", "false");
+  });
 });
 
-// PROGETTI
-document.getElementById("projectsBtn").addEventListener("click", function () {
-  const section = document.getElementById("projectsContent");
-  section.classList.add("show");
-  section.setAttribute("aria-hidden", "false");
-});
-
-// CONTATTI
-document.getElementById("contactBtn").addEventListener("click", function () {
-  const section = document.getElementById("contactForm");
-  section.classList.add("show");
-  section.setAttribute("aria-hidden", "false");
-});
-
-// CHI SONO
-document.getElementById("bioBtn").addEventListener("click", function () {
-  const section = document.getElementById("bioContent");
-  section.classList.add("show");
-  section.setAttribute("aria-hidden", "false");
-});
-
-// CHIUDI tutte le popup con pulsanti "×"
+// Chiudi popup
 document.querySelectorAll(".close-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    const section = btn.closest("section");
+    const section = btn.closest(".popup-section");
     section.classList.remove("show");
     section.setAttribute("aria-hidden", "true");
   });
