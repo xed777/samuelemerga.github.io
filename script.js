@@ -65,9 +65,14 @@ Object.keys(buttons).forEach(btnId => {
 // Avvia Typed.js per il logo animato
 document.addEventListener("DOMContentLoaded", function () {
   new Typed('#typed', {
-    strings: ['XED', ''],
-    typeSpeed: 150,
-    backSpeed: 80,
+    strings: [
+      "Ciao, sono Samuele Merga.",
+      "Creo video, grafiche e identità digitali.",
+      "Editing video. Design. Web.",
+      "Benvenuto nel mio mondo visivo ✨"
+    ],
+    typeSpeed: 60,
+    backSpeed: 30,
     backDelay: 2000,
     loop: true,
     showCursor: true,
@@ -97,4 +102,3 @@ document.addEventListener("click", function (event) {
     unlockScroll();
   }
 });
-
