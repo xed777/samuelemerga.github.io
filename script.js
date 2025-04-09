@@ -1,6 +1,5 @@
 const openBtns = {
   showreelBtn: "showreelContent",
-  projectsBtn: "projectsContent",
   contactBtn: "contactForm",
   bioBtn: "bioContent",
 };
