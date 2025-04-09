@@ -1,29 +1,28 @@
-const sections = {
+const openBtns = {
   showreelBtn: "showreelContent",
   projectsBtn: "projectsContent",
   contactBtn: "contactForm",
-  bioBtn: "bioContent"
+  bioBtn: "bioContent",
 };
 
 // Apri popup
-Object.entries(sections).forEach(([btnId, sectionId]) => {
-  const btn = document.getElementById(btnId);
-  const section = document.getElementById(sectionId);
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".popup-section").forEach(s => {
-      s.classList.remove("show");
-      s.setAttribute("aria-hidden", "true");
+Object.entries(openBtns).forEach(([btnId, popupId]) => {
+  document.getElementById(btnId).addEventListener("click", () => {
+    document.querySelectorAll(".popup-section").forEach(p => {
+      p.classList.remove("show");
+      p.setAttribute("aria-hidden", "true");
     });
-    section.classList.add("show");
-    section.setAttribute("aria-hidden", "false");
+    const popup = document.getElementById(popupId);
+    popup.classList.add("show");
+    popup.setAttribute("aria-hidden", "false");
   });
 });
 
 // Chiudi popup
 document.querySelectorAll(".close-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    const section = btn.closest(".popup-section");
-    section.classList.remove("show");
-    section.setAttribute("aria-hidden", "true");
+    const popup = btn.closest(".popup-section");
+    popup.classList.remove("show");
+    popup.setAttribute("aria-hidden", "true");
   });
 });
