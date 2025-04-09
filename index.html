@@ -8,66 +8,6 @@
   <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .projects {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 1rem;
-      background-color: #0d0d0d;
-    }
-
-    .project {
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-    }
-
-    .project img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .project h3 {
-      color: #ffffff;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project p {
-      color: #cccccc;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    @media (min-width: 768px) {
-      .projects {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .project {
-        width: calc(50% - 2rem);
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .project {
-        width: calc(33.333% - 2rem);
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- MENU -->
@@ -79,6 +19,21 @@
 
   <!-- LOGO -->
   <h1 class="logo" role="heading" aria-level="1"><span id="typed"></span></h1>
+
+  <!-- PROGETTI VISIBILI -->
+  <section class="projects">
+    <div class="project">
+      <h3>Personal Logo Reveal</h3>
+      <p>Animazione di logo personale, minimal ed elegante, perfetta per intro o branding.</p>
+      <img src="media/1-ezgif.com-video-to-gif-converter.gif" alt="Personal Logo Reveal">
+    </div>
+
+    <div class="project">
+      <h3>Digital Flow</h3>
+      <p>Composizione astratta in stile glitch/pixel con movimenti fluidi e texture digitali.</p>
+      <img src="media/2-ezgif.com-video-to-gif-converter.gif" alt="Digital Flow">
+    </div>
+  </section>
 
   <main>
     <!-- SHOWREEL -->
@@ -125,24 +80,9 @@
           <li>Graphic design e brand identity</li>
           <li>Web design & interfacce utente (UI/UX)</li>
         </ul>
-        <a class="btn-primary btn-download-cv" href="https://drive.google.com/uc?export=download&id=1pnvnOcjpOuwRsh0tZ3_5fFQZbLOQA1e5" target="_blank" rel="noopener noreferrer">
+        <a class="btn-primary btn-download-cv" href="media/CV-Samuele-Merga.pdf" target="_blank" rel="noopener noreferrer">
           📄 Scarica il mio CV
         </a>
-      </div>
-    </section>
-
-    <!-- PROGETTI -->
-    <section class="projects">
-      <div class="project">
-        <h3>Personal Logo Reveal</h3>
-        <p>Animazione di logo personale, minimal ed elegante, perfetta per intro o branding.</p>
-        <img src="1-ezgif.com-video-to-gif-converter.gif" alt="Personal Logo Reveal">
-      </div>
-
-      <div class="project">
-        <h3>Digital Flow</h3>
-        <p>Composizione astratta in stile glitch/pixel con movimenti fluidi e texture digitali.</p>
-        <img src="2-ezgif.com-video-to-gif-converter.gif" alt="Digital Flow">
       </div>
     </section>
   </main>
@@ -157,3 +97,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
