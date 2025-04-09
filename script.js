@@ -6,17 +6,13 @@ const buttons = {
 
 Object.keys(buttons).forEach(btnId => {
   const btn = document.getElementById(btnId);
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
+  btn.addEventListener("click", () => {
     Object.values(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
     Object.keys(buttons).forEach(id => document.getElementById(id).classList.remove("active"));
     document.getElementById(buttons[btnId]).classList.add("active");
     btn.classList.add("active");
-
     document.body.setAttribute('data-popup-opened', 'true');
-    setTimeout(() => {
-      document.body.removeAttribute('data-popup-opened');
-    }, 100);
+    setTimeout(() => document.body.removeAttribute('data-popup-opened'), 100);
   });
 });
 
