@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samuele Merga – Portfolio</title>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
-    /* Reset base */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -33,7 +36,7 @@
       border-radius: 1rem;
       padding: 2rem;
       margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
@@ -76,7 +79,6 @@
       color: #777;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .card {
         padding: 1.5rem;
@@ -92,7 +94,7 @@
   <div class="container">
 
     <!-- Sezione Chi sono -->
-    <section class="card chi-sono">
+    <section class="card chi-sono" data-aos="fade-up">
       <h2>Chi sono</h2>
       <p>Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.</p>
       <ul>
@@ -104,8 +106,8 @@
       <p class="last-update">Ultimo aggiornamento: Aprile 2025</p>
     </section>
 
-    <!-- Sezione Portfolio (facoltativa) -->
-    <section class="card">
+    <!-- Sezione Portfolio -->
+    <section class="card" data-aos="fade-up" data-aos-delay="200">
       <h2>Portfolio</h2>
       <p>🎬 <strong>Spot pubblicitario - Festival Creativo</strong><br>
         Montaggio e motion graphics per un evento culturale con oltre 10.000 partecipanti.</p>
@@ -118,5 +120,14 @@
     </section>
 
   </div>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
