@@ -4,51 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XED - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio di Samuele Merga: Showreel e contatti.">
+  <link rel="icon" href="https://www.svgrepo.com/show/502588/lightning.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- NAV -->
   <nav class="menu">
     <button id="showreelBtn">SHOWREEL</button>
     <button id="contactBtn">CONTACT ME</button>
     <button id="bioBtn">CHI SONO</button>
   </nav>
 
-  <!-- LOGO -->
-  <h1 class="logo">Creo video, grafiche e identità digitali</h1>
+  <h1 class="logo"><span id="typed"></span></h1>
 
-  <!-- POPUP: Showreel -->
-  <section class="popup-section" id="showreelContent" aria-hidden="true">
-    <div class="popup">
-      <button class="close-btn">&times;</button>
-      <h2>Showreel</h2>
-      <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
-    </div>
+  <section class="video" id="showreelContent">
+    <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
   </section>
 
-  <!-- POPUP: Contact -->
-  <section class="popup-section" id="contactForm" aria-hidden="true">
+  <section class="form" id="contactForm">
     <div class="popup">
-      <button class="close-btn">&times;</button>
       <h2>Contattami</h2>
       <form action="https://formspree.io/f/xqkrbwlr" method="POST">
-        <input type="text" name="name" placeholder="Nome" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Messaggio" required></textarea>
-        <button type="submit" class="btn-primary">Invia</button>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Invia</button>
       </form>
+      <p>Email: <a href="mailto:samuelemerga4@gmail.com">samuelemerga4@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://github.com/xed777" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+      </div>
     </div>
   </section>
 
-  <!-- POPUP: Chi sono -->
-  <section class="popup-section" id="bioContent" aria-hidden="true">
+  <section class="bio" id="bioContent">
     <div class="popup">
-      <button class="close-btn">&times;</button>
       <h2>Chi sono</h2>
-      <p>Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.</p>
+      <p>
+        Ciao, sono Samuele Merga. Creo contenuti visivi, video e identità digitali per il web moderno.
+      </p>
+      <ul>
+        <li>Editing video & motion graphics</li>
+        <li>Graphic design e brand identity</li>
+        <li>Web design & UI/UX</li>
+      </ul>
+      <a class="btn-download-cv" href="CV-Samuele-Merga.pdf" target="_blank">
+        📄 Scarica il mio CV
+      </a>
     </div>
   </section>
 
-  <script src="script.js" defer></script>
+  <footer>
+    <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
 </body>
 </html>
