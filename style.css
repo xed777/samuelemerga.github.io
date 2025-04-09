@@ -1,91 +1,217 @@
+/* Variabili */
+:root {
+  --color-soft: #f8f9fa;
+  --color-bg: #0d1117;
+  --color-accent: #58a6ff;
+  --color-text: #c9d1d9;
+  --color-dark-bg: #161b22;
+}
+
 /* Base */
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
-/* Navigation */
-nav {
+/* Menu di navigazione */
+.menu {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem 1rem;
+  background-color: var(--color-dark-bg);
   border-bottom: 1px solid #30363d;
-  background-color: #161b22;
   flex-wrap: wrap;
 }
 
-nav a {
-  text-decoration: none;
-  color: #c9d1d9;
+.menu button {
+  background: none;
+  border: none;
+  color: var(--color-text);
   font-weight: 500;
   font-size: 1.1rem;
+  cursor: pointer;
   transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #58a6ff;
+.menu button:hover {
+  color: var(--color-accent);
 }
 
-/* Modal */
-.modal {
-  background: #f8f9fa;
-  color: #0d1117;
+/* Logo */
+.logo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+/* Sezioni comuni */
+.video,
+.form,
+.bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  width: 90%;
+  margin: 0 auto;
   padding: 2rem;
-  max-width: 700px;
-  margin: 3rem auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  position: relative;
+  box-sizing: border-box;
 }
 
-.modal h2 {
+/* Popup */
+.popup {
+  background: var(--color-soft);
+  color: var(--color-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.popup h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
   text-align: center;
-  color: #1f2937;
 }
 
-.modal iframe {
+/* Video iframe */
+section.video iframe {
+  display: block;
   width: 100%;
+  max-width: 640px;
   height: auto;
   aspect-ratio: 16 / 9;
-  border-radius: 10px;
   border: none;
+  margin: 1rem auto 0 auto;
+  border-radius: 10px;
 }
 
-/* Close button (optional) */
-.modal .close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 1.2rem;
+/* Form contatto */
+.popup form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.popup form label,
+.popup form input,
+.popup form textarea,
+.popup form button {
+  width: 100%;
+}
+
+.popup form input,
+.popup form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-bg);
+  color: var(--color-soft);
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #1f2937;
+}
+
+/* CV download */
+.btn-download-cv {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Close buttons */
+.close-btn {
   background: none;
   border: none;
+  font-size: 2rem;
   color: #6b7280;
   cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 1rem;
 }
 
-/* Responsive rules */
+/* Social links */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media query */
+@media (min-width: 601px) {
+  .popup form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .popup form label {
+    grid-column: span 2;
+  }
+
+  .popup form input,
+  .popup form textarea,
+  .popup form button {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 768px) {
-  nav {
+  .menu {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
   }
 
-  .modal {
-    width: 90%;
-    margin: 2rem auto;
+  .logo {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .popup {
     padding: 1.2rem;
   }
 
-  .modal h2 {
+  .popup h2 {
     font-size: 1.5rem;
+  }
+
+  section.video iframe {
+    width: 100%;
   }
 }
