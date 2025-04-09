@@ -10,15 +10,18 @@
   <link rel="stylesheet" href="style_updated.css">
 </head>
 <body>
+  <!-- MENU -->
   <nav class="menu" role="navigation" aria-label="Menu principale">
     <button id="showreelBtn" aria-controls="showreelContent" aria-expanded="false">SHOWREEL</button>
     <button id="contactBtn" aria-controls="contactForm" aria-expanded="false">CONTACT ME</button>
     <button id="bioBtn" aria-controls="bioContent" aria-expanded="false">CHI SONO</button>
   </nav>
 
+  <!-- LOGO -->
   <h1 class="logo" role="heading" aria-level="1"><span id="typed"></span></h1>
 
   <main>
+    <!-- SHOWREEL -->
     <section class="video" id="showreelContent" role="dialog" aria-hidden="true" aria-labelledby="showreelBtn">
       <button class="close-btn" aria-label="Chiudi Showreel">&times;</button>
       <div class="popup">
@@ -27,6 +30,7 @@
       </div>
     </section>
 
+    <!-- FORM CONTATTO -->
     <section class="form" id="contactForm" role="dialog" aria-hidden="true" aria-labelledby="contactBtn">
       <button class="close-btn" aria-label="Chiudi modulo di contatto">&times;</button>
       <div class="popup">
@@ -48,6 +52,7 @@
       </div>
     </section>
 
+    <!-- CHI SONO -->
     <section class="bio" id="bioContent" role="dialog" aria-hidden="true" aria-labelledby="bioBtn">
       <button class="close-btn" aria-label="Chiudi sezione Chi sono">&times;</button>
       <div class="popup">
@@ -67,10 +72,12 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <p>&copy; 2025 Samuele Merga. Tutti i diritti riservati.</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js" defer></script>
 </body>
