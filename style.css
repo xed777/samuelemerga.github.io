@@ -163,6 +163,55 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+.floating-contact {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--color-accent);
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.floating-contact:hover {
+  background: var(--color-secondary);
+  transform: scale(1.1);
+}
+
+/* Sezione Portfolio */
+.portfolio {
+  margin: 3rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  background: var(--color-soft);
+  color: var(--color-bg);
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.portfolio h2 {
+  color: var(--color-accent);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.project {
+  margin-bottom: 2rem;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 600px) {
   nav.menu {
     flex-direction: column;
@@ -179,4 +228,3 @@ footer {
     font-size: 1rem;
   }
 }
-
