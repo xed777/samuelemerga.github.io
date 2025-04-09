@@ -16,6 +16,11 @@ body {
   line-height: 1.6;
 }
 
+/* Transizioni globali */
+button, a, input, textarea {
+  transition: all 0.3s ease;
+}
+
 /* Menu di navigazione */
 .menu {
   display: flex;
@@ -34,7 +39,6 @@ body {
   font-weight: 500;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .menu button:hover {
@@ -77,6 +81,19 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   box-sizing: border-box;
+
+  /* Animazione iniziale (nascosta) */
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+/* Quando visibile */
+.popup.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .popup h2 {
@@ -130,7 +147,6 @@ section.video iframe {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
 .btn-primary:hover {
@@ -215,3 +231,4 @@ section.video iframe {
     width: 100%;
   }
 }
+
