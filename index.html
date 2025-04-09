@@ -13,27 +13,13 @@
   <!-- MENU -->
   <nav class="menu" role="navigation" aria-label="Menu principale">
     <button id="showreelBtn" aria-controls="showreelContent" aria-expanded="false">SHOWREEL</button>
+    <button id="projectsBtn" aria-controls="projectsContent" aria-expanded="false">PROGETTI</button>
     <button id="contactBtn" aria-controls="contactForm" aria-expanded="false">CONTACT ME</button>
     <button id="bioBtn" aria-controls="bioContent" aria-expanded="false">CHI SONO</button>
   </nav>
 
   <!-- LOGO -->
   <h1 class="logo" role="heading" aria-level="1"><span id="typed"></span></h1>
-
-  <!-- PROGETTI VISIBILI -->
-  <section class="projects">
-    <div class="project">
-      <h3>Personal Logo Reveal</h3>
-      <p>Animazione di logo personale, minimal ed elegante, perfetta per intro o branding.</p>
-      <img src="media/1-ezgif.com-video-to-gif-converter.gif" alt="Personal Logo Reveal">
-    </div>
-
-    <div class="project">
-      <h3>Digital Flow</h3>
-      <p>Composizione astratta in stile glitch/pixel con movimenti fluidi e texture digitali.</p>
-      <img src="media/2-ezgif.com-video-to-gif-converter.gif" alt="Digital Flow">
-    </div>
-  </section>
 
   <main>
     <!-- SHOWREEL -->
@@ -42,6 +28,27 @@
       <div class="popup">
         <h2 id="showreelHeading">Showreel</h2>
         <iframe title="Video Showreel" src="https://www.youtube.com/embed/6KBu6psoLMY" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section class="bio" id="projectsContent" role="dialog" aria-hidden="true" aria-labelledby="projectsBtn">
+      <button class="close-btn" aria-label="Chiudi sezione Progetti">&times;</button>
+      <div class="popup">
+        <h2 id="projectsHeading">Progetti</h2>
+        <div class="projects">
+          <div class="project">
+            <h3>Personal Logo Reveal</h3>
+            <p>Animazione di logo personale, minimal ed elegante, perfetta per intro o branding.</p>
+            <img src="media/1-ezgif.com-video-to-gif-converter.gif" alt="Personal Logo Reveal">
+          </div>
+
+          <div class="project">
+            <h3>Digital Flow</h3>
+            <p>Composizione astratta in stile glitch/pixel con movimenti fluidi e texture digitali.</p>
+            <img src="media/2-ezgif.com-video-to-gif-converter.gif" alt="Digital Flow">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -97,4 +104,3 @@
   <script src="script.js" defer></script>
 </body>
 </html>
-
