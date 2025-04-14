@@ -71,6 +71,7 @@ body.menu-open .main-content {
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 100vh;
 }
 
 .top-text {
@@ -82,15 +83,16 @@ body.menu-open .main-content {
 }
 
 .big-text {
-  font-size: 14vw;
+  font-size: 10vw;
   font-weight: 900;
   line-height: 1;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   font-family: 'Anton', sans-serif;
+  text-align: center;
 }
 
 .overlay-menu {
@@ -107,6 +109,7 @@ body.menu-open .main-content {
   top: 0;
   left: 0;
   z-index: 20;
+  text-align: center;
 }
 
 body.menu-open .overlay-menu {
@@ -121,7 +124,7 @@ body.menu-open .overlay-menu {
 }
 
 .menu-links a {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--bg);
   text-decoration: none;
   cursor: pointer;
@@ -129,6 +132,7 @@ body.menu-open .overlay-menu {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  word-break: break-word;
 }
 
 .menu-links a:hover {
@@ -225,17 +229,19 @@ body.menu-open .overlay-menu {
   .column {
     border-left: 1px solid var(--highlight);
     border-bottom: none;
-    padding: 2rem 1rem;
+    padding: 2rem 0.5rem;
     align-items: center;
     text-align: center;
+    min-height: 100vh;
   }
 
   .big-text {
-    font-size: 25vw;
+    font-size: 18vw;
+    letter-spacing: -1px;
   }
 
   .menu-links a {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .about-page,
@@ -247,9 +253,10 @@ body.menu-open .overlay-menu {
   .contact-content {
     padding-top: 1rem;
     gap: 1rem;
+    text-align: left;
   }
 
   .contact-content a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
