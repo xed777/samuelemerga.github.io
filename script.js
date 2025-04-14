@@ -60,3 +60,20 @@ function showContactPage() {
 function hideContactPage() {
   hidePage('contactPage');
 }
+
+// ===== MODALE PROGETTI =====
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // blocca lo scroll
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // riattiva lo scroll
+  }
+}
