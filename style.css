@@ -1,7 +1,7 @@
 :root {
-  --bg: #090F15;         /* Midnight */
-  --text: #D3D1CE;       /* Arctic */
-  --highlight: #B3B7BA;  /* Slopes */
+  --bg: #FFFFFF;              /* Bianco puro */
+  --text: #000000;            /* Nero puro */
+  --highlight: #10069F;       /* Pantone Blue 072 C */
 }
 
 *, *::before, *::after {
@@ -24,8 +24,8 @@ body {
 }
 
 .sidebar {
-  background-color: #111;
-  color: var(--text);
+  background-color: var(--highlight);
+  color: var(--bg);
   width: 60px;
   display: flex;
   align-items: center;
@@ -86,8 +86,8 @@ body.menu-open .main-content {
 .overlay-menu {
   width: 0;
   height: 100vh;
-  background-color: #111;
-  color: var(--highlight);
+  background-color: var(--highlight);
+  color: var(--bg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -126,15 +126,15 @@ body.menu-open .overlay-menu {
 .overlay-column.left li,
 .overlay-column.right li {
   font-size: 0.85rem;
-  border-bottom: 1px solid var(--highlight);
+  border-bottom: 1px solid var(--bg);
   margin-bottom: 1rem;
 }
 
 .overlay-column.center a {
   font-size: 2.5rem;
-  color: var(--highlight);
+  color: var(--bg);
   text-decoration: none;
-  border-bottom: 1px solid var(--highlight);
+  border-bottom: 1px solid var(--bg);
   cursor: pointer;
   margin-bottom: 1.5rem;
 }
@@ -171,14 +171,6 @@ body.menu-open .overlay-menu {
   cursor: pointer;
 }
 
-.about-page-content {
-  max-width: 800px;
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .about-page-content a.download {
   margin-top: 2rem;
   padding: 0.75rem 1.5rem;
@@ -195,14 +187,6 @@ body.menu-open .overlay-menu {
   color: var(--bg);
 }
 
-.contact-content {
-  margin-top: 4rem;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 .contact-content a {
   font-size: 4vw;
   text-decoration: none;
@@ -212,44 +196,4 @@ body.menu-open .overlay-menu {
 
 .contact-content a:hover {
   color: var(--highlight);
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-  }
-
-  .column {
-    border: none;
-    border-top: 1px solid var(--highlight);
-    text-align: center;
-    align-items: center;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: 60px;
-    grid-column: span 3;
-  }
-
-  .big-text {
-    font-size: 20vw;
-  }
-
-  .overlay-menu {
-    width: 100vw;
-  }
-
-  .overlay-row {
-    flex-direction: column;
-  }
-
-  .overlay-column.center a {
-    font-size: 2rem;
-  }
-
-  .contact-content a {
-    font-size: 8vw;
-  }
 }
