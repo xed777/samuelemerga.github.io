@@ -26,6 +26,7 @@ body {
   display: flex;
 }
 
+/* ===== SIDEBAR ===== */
 .sidebar {
   background-color: var(--highlight);
   color: var(--bg);
@@ -51,27 +52,16 @@ body.menu-open .sidebar::before {
   content: '\00d7';
 }
 
+/* ===== LANDING PAGE ===== */
 .main-content {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 60px 1fr 1fr 1fr;
-  transition: width 0.5s ease-in-out;
-}
-
-body.menu-open .main-content {
-  width: 50vw;
-}
-
-.column {
-  border-left: 1px solid var(--highlight);
-  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  min-height: 100vh;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding-left: 60px;
+  position: relative;
 }
 
 .top-text {
@@ -88,19 +78,25 @@ body.menu-open .main-content {
   color: var(--text);
 }
 
-.big-text {
-  font-size: clamp(4rem, 16vw, 12rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -2px;
+.hero {
+  flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  font-family: 'Anton', sans-serif;
-  text-align: center;
+  justify-content: center;
+  width: 100%;
 }
 
+.hero-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem, 20vw, 14rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-align: center;
+  color: var(--text);
+  line-height: 1;
+}
+
+/* ===== MENU OVERLAY ===== */
 .overlay-menu {
   width: 0;
   height: 100vh;
@@ -138,7 +134,6 @@ body.menu-open .overlay-menu {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
-  word-break: break-word;
 }
 
 .menu-links a:hover {
@@ -146,6 +141,7 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
+/* ===== PAGINE ABOUT/CONTATTI ===== */
 .about-page,
 .contact-page {
   display: none;
@@ -234,26 +230,10 @@ body.menu-open .overlay-menu {
   color: var(--highlight);
 }
 
-/* ========== MEDIA QUERY ========== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: auto;
-    grid-template-columns: none;
-  }
-
-  .column {
-    border-left: none;
-    border-bottom: 1px solid var(--highlight);
-    padding: 2rem 1rem;
-    min-height: auto;
-  }
-
-  .big-text {
-    font-size: clamp(3rem, 20vw, 7rem);
-    letter-spacing: -1px;
+  .hero-title {
+    font-size: clamp(3rem, 25vw, 9rem);
   }
 
   .top-text {
