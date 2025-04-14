@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+  <!-- Menu Overlay -->
   <nav class="overlay-menu" id="menuOverlay">
     <div class="content">
       <div class="menu-links">
@@ -20,17 +20,18 @@
     </div>
   </nav>
 
-<div class="sidebar" onclick="toggleMenu()"></div>
+  <!-- Sidebar -->
+  <div class="sidebar" onclick="toggleMenu()"></div>
 
-<main class="main-content" id="mainContent">
-  <div class="top-text">xed's portfolio</div>
-  <div class="hero">
-    <h1 class="hero-title">XED</h1>
-  </div>
-</main>
+  <!-- Landing -->
+  <main class="main-content" id="mainContent">
+    <div class="top-text">xed's portfolio</div>
+    <div class="hero">
+      <h1 class="hero-title">XED</h1>
+    </div>
+  </main>
 
-
-
+  <!-- ABOUT -->
   <section class="about-page" id="aboutPage">
     <div class="top-text" onclick="hideAboutPage()">xed's portfolio</div>
     <div class="about-page-content">
@@ -43,13 +44,39 @@
     </div>
   </section>
 
-
+  <!-- CONTATTI -->
   <section class="contact-page" id="contactPage">
     <div class="top-text" onclick="hideContactPage()">xed's portfolio</div>
     <div class="contact-content">
       <a href="mailto:samuelemerga4@gmail.com" target="_blank">Email</a>
       <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- PROGETTI -->
+  <section class="projects-section">
+    <div class="projects-grid">
+
+      <!-- PROGETTO 1: Showreel -->
+      <a href="https://youtu.be/6KBu6psoLMY" target="_blank" class="project-card">
+        <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
+        <div class="project-overlay">
+          <h3>SHOWREEL</h3>
+          <p>Motion design & video editing</p>
+        </div>
+      </a>
+
+      <!-- CASSELLA VUOTA 2 -->
+      <div class="project-card">
+        <div class="project-placeholder">PROGETTO 2</div>
+      </div>
+
+      <!-- CASSELLA VUOTA 3 -->
+      <div class="project-card">
+        <div class="project-placeholder">PROGETTO 3</div>
+      </div>
+
     </div>
   </section>
 
