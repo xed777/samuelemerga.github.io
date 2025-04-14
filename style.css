@@ -26,7 +26,7 @@ body {
   display: block;
 }
 
-/* ===== SIDEBAR FIXED ===== */
+/* SIDEBAR */
 .sidebar {
   background-color: var(--highlight);
   color: var(--bg);
@@ -54,7 +54,7 @@ body.menu-open .sidebar::before {
   content: '\00d7';
 }
 
-/* ===== MAIN CONTENT ===== */
+/* MAIN CONTENT */
 .main-content {
   margin-left: 60px;
   width: calc(100vw - 60px);
@@ -98,7 +98,6 @@ body.menu-open .sidebar::before {
   line-height: 1;
 }
 
-/* ===== BLUR WHEN MENU OPEN ===== */
 body.menu-open #mainContent,
 body.menu-open .about-page,
 body.menu-open .contact-page {
@@ -107,7 +106,7 @@ body.menu-open .contact-page {
   pointer-events: none;
 }
 
-/* ===== OVERLAY MENU ===== */
+/* OVERLAY MENU */
 .overlay-menu {
   width: 0;
   height: 100vh;
@@ -152,7 +151,7 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
-/* ===== ABOUT & CONTACT ===== */
+/* ABOUT & CONTACT */
 .about-page,
 .contact-page {
   display: none;
@@ -218,18 +217,6 @@ body.menu-open .overlay-menu {
   color: var(--bg);
 }
 
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 2.5rem;
-  font-family: 'Syne', sans-serif;
-  font-weight: 600;
-  width: 100%;
-  max-width: 800px;
-  padding: 4rem 1rem;
-}
-
 .contact-content a {
   color: var(--text);
   text-decoration: none;
@@ -242,7 +229,7 @@ body.menu-open .overlay-menu {
   color: var(--highlight);
 }
 
-/* ===== SEZIONE PROGETTI ===== */
+/* PROGETTI & MODALE */
 .projects-section {
   margin-left: 60px;
   padding: 4rem 2rem;
@@ -271,6 +258,7 @@ body.menu-open .overlay-menu {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -319,7 +307,46 @@ body.menu-open .overlay-menu {
   padding: 1rem;
 }
 
-/* ===== RESPONSIVE ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--bg);
+  padding: 2rem;
+  border: 2px solid var(--text);
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.modal-video iframe {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .main-content {
     margin-left: 60px;
@@ -343,7 +370,8 @@ body.menu-open .overlay-menu {
   }
 
   .about-page,
-  .contact-page {
+  .contact-page,
+  .projects-section {
     padding: 3rem 1rem;
   }
 
@@ -358,8 +386,5 @@ body.menu-open .overlay-menu {
   .contact-content a {
     font-size: 1.5rem;
   }
-
-  .projects-section {
-    padding: 3rem 1rem;
-  }
 }
+</style>
