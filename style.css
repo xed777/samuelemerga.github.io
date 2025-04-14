@@ -35,6 +35,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   z-index: 30;
+  position: fixed;
+  height: 100vh;
 }
 
 .sidebar::before {
@@ -94,6 +96,10 @@ body.menu-open .main-content {
   align-items: center;
   transition: width 0.5s ease-in-out;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
 }
 
 body.menu-open .overlay-menu {
@@ -194,3 +200,46 @@ body.menu-open .overlay-menu {
 .contact-content a:hover {
   color: var(--highlight);
 }
+
+/* ===== Responsive per iPhone 14 (max-width: 430px) ===== */
+@media (max-width: 430px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    height: auto;
+    width: 100vw;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .column {
+    border: none;
+    border-bottom: 1px solid var(--highlight);
+    padding: 2rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .big-text {
+    font-size: 25vw;
+  }
+
+  .menu-links a {
+    font-size: 2rem;
+  }
+
+  .about-page,
+  .contact-page {
+    padding: 2rem 1rem;
+  }
+
+  .contact-content a {
+    font-size: 1.5rem;
+  }
+} 
