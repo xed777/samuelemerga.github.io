@@ -2,64 +2,61 @@ function toggleMenu() {
   document.body.classList.toggle('menu-open');
 }
 
-function showAboutPage() {
-  const main = document.getElementById('mainContent');
-  const about = document.getElementById('aboutPage');
-  const contact = document.getElementById('contactPage');
-
-  main.style.opacity = '1';
-  main.style.transition = 'opacity 0.4s ease';
-  main.style.opacity = '0';
+function fadeOut(element, callback) {
+  element.style.transition = 'opacity 0.4s ease';
+  element.style.opacity = '0';
 
   setTimeout(() => {
-    main.style.display = 'none';
-    contact.classList.remove('active');
-    about.classList.add('active');
-    document.body.classList.remove('menu-open');
+    element.style.display = 'none';
+    if (callback) callback();
   }, 400);
+}
+
+function fadeIn(element, displayType = 'grid') {
+  element.style.display = displayType;
+  element.style.transition = 'opacity 0.4s ease';
+  element.style.opacity = '0';
+
+  setTimeout(() => {
+    element.style.opacity = '1';
+  }, 10);
+}
+
+function showPage(pageId) {
+  const main = document.getElementById('mainContent');
+  const pages = ['aboutPage', 'contactPage'];
+
+  fadeOut(main, () => {
+    pages.forEach(id => {
+      const page = document.getElementById(id);
+      page.classList.toggle('active', id === pageId);
+    });
+
+    document.body.classList.remove('menu-open');
+  });
+}
+
+function hidePage(pageId) {
+  const main = document.getElementById('mainContent');
+  const page = document.getElementById(pageId);
+
+  page.classList.remove('active');
+  fadeIn(main);
+}
+
+// Esempio di utilizzo:
+function showAboutPage() {
+  showPage('aboutPage');
 }
 
 function hideAboutPage() {
-  const main = document.getElementById('mainContent');
-  const about = document.getElementById('aboutPage');
-
-  about.classList.remove('active');
-  main.style.display = 'grid';
-  main.style.opacity = '0';
-  main.style.transition = 'opacity 0.4s ease';
-
-  setTimeout(() => {
-    main.style.opacity = '1';
-  }, 10);
+  hidePage('aboutPage');
 }
 
 function showContactPage() {
-  const main = document.getElementById('mainContent');
-  const contact = document.getElementById('contactPage');
-  const about = document.getElementById('aboutPage');
-
-  main.style.opacity = '1';
-  main.style.transition = 'opacity 0.4s ease';
-  main.style.opacity = '0';
-
-  setTimeout(() => {
-    main.style.display = 'none';
-    about.classList.remove('active');
-    contact.classList.add('active');
-    document.body.classList.remove('menu-open');
-  }, 400);
+  showPage('contactPage');
 }
 
 function hideContactPage() {
-  const main = document.getElementById('mainContent');
-  const contact = document.getElementById('contactPage');
-
-  contact.classList.remove('active');
-  main.style.display = 'grid';
-  main.style.opacity = '0';
-  main.style.transition = 'opacity 0.4s ease';
-
-  setTimeout(() => {
-    main.style.opacity = '1';
-  }, 10);
+  hidePage('contactPage');
 }
