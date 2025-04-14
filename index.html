@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XED</title>
+  <!-- ✅ Fonts ben inclusi -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+  <!-- ✅ Collegamento al tuo CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ✅ Menu overlay -->
   <nav class="overlay-menu" id="menuOverlay">
     <div class="content">
       <div class="menu-links">
@@ -19,18 +22,26 @@
     </div>
   </nav>
 
+  <!-- ✅ Contenuto principale -->
   <main class="main-content" id="mainContent">
+    <!-- ✅ Sidebar cliccabile -->
     <div class="sidebar" onclick="toggleMenu()"></div>
+
+    <!-- ✅ Logo testuale -->
     <div class="top-text">xed's portfolio</div>
 
-    <div class="column">
-      <div class="big-text"><span>XE</span></div>
-    </div>
-    <div class="column">
-      <div class="big-text"><span>D</span></div>
+    <!-- ✅ Colonne responsive -->
+    <div class="columns">
+      <div class="column">
+        <div class="big-text"><span>XE</span></div>
+      </div>
+      <div class="column">
+        <div class="big-text"><span>D</span></div>
+      </div>
     </div>
   </main>
 
+  <!-- ✅ Pagina ABOUT -->
   <section class="about-page" id="aboutPage">
     <div class="top-text" onclick="hideAboutPage()">xed's portfolio</div>
     <div class="about-page-content">
@@ -43,6 +54,7 @@
     </div>
   </section>
 
+  <!-- ✅ Pagina CONTATTI -->
   <section class="contact-page" id="contactPage">
     <div class="top-text" onclick="hideContactPage()">xed's portfolio</div>
     <div class="contact-content">
