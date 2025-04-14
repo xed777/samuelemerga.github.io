@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Menu Overlay -->
   <nav class="overlay-menu" id="menuOverlay">
     <div class="content">
       <div class="menu-links">
@@ -20,10 +19,8 @@
     </div>
   </nav>
 
-  <!-- Sidebar -->
   <div class="sidebar" onclick="toggleMenu()"></div>
 
-  <!-- Landing -->
   <main class="main-content" id="mainContent">
     <div class="top-text">xed's portfolio</div>
     <div class="hero">
@@ -58,14 +55,14 @@
   <section class="projects-section">
     <div class="projects-grid">
 
-      <!-- PROGETTO 1: Showreel -->
-      <a href="https://youtu.be/6KBu6psoLMY" target="_blank" class="project-card">
+      <!-- PROGETTO 1: Showreel con modale -->
+      <div class="project-card" onclick="openModal('showreelModal')">
         <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
         <div class="project-overlay">
           <h3>SHOWREEL</h3>
           <p>Motion design & video editing</p>
         </div>
-      </a>
+      </div>
 
       <!-- CASSELLA VUOTA 2 -->
       <div class="project-card">
@@ -79,6 +76,20 @@
 
     </div>
   </section>
+
+  <!-- MODALE: Showreel -->
+  <div id="showreelModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('showreelModal')">&times;</span>
+      <div class="modal-video">
+        <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-text">
+        <h3>SHOWREEL</h3>
+        <p>Motion design e video editing personale. Creato con After Effects, Premiere Pro e un pizzico di follia visiva.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
