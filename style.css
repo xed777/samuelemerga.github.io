@@ -23,14 +23,18 @@ html, body {
 }
 
 body {
-  display: flex;
+  display: block;
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== SIDEBAR FIXED ===== */
 .sidebar {
   background-color: var(--highlight);
   color: var(--bg);
   width: 60px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,8 +42,6 @@ body {
   font-weight: bold;
   cursor: pointer;
   z-index: 30;
-  position: fixed;
-  height: 100vh;
   font-family: 'Syne', sans-serif;
 }
 
@@ -52,22 +54,22 @@ body.menu-open .sidebar::before {
   content: '\00d7';
 }
 
-/* ===== LANDING PAGE ===== */
+/* ===== MAIN CONTENT ===== */
 .main-content {
+  margin-left: 60px;
+  width: calc(100vw - 60px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  padding-left: 60px;
   position: relative;
 }
 
 .top-text {
   position: absolute;
   top: 1rem;
-  left: 4.5rem;
+  left: 1rem;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -96,7 +98,16 @@ body.menu-open .sidebar::before {
   line-height: 1;
 }
 
-/* ===== MENU OVERLAY ===== */
+/* ===== BLUR WHEN MENU OPEN ===== */
+body.menu-open #mainContent,
+body.menu-open .about-page,
+body.menu-open .contact-page {
+  filter: blur(8px);
+  transition: filter 0.4s ease;
+  pointer-events: none;
+}
+
+/* ===== OVERLAY MENU ===== */
 .overlay-menu {
   width: 0;
   height: 100vh;
@@ -141,7 +152,7 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
-/* ===== PAGINE ABOUT/CONTATTI ===== */
+/* ===== ABOUT & CONTACT ===== */
 .about-page,
 .contact-page {
   display: none;
@@ -156,6 +167,7 @@ body.menu-open .overlay-menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 60px;
 }
 
 .about-page.active,
@@ -232,12 +244,19 @@ body.menu-open .overlay-menu {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .main-content {
+    margin-left: 60px;
+    width: calc(100vw - 60px);
+    padding: 0 1rem;
+    text-align: center;
+  }
+
   .hero-title {
     font-size: clamp(3rem, 25vw, 9rem);
   }
 
   .top-text {
-    left: 1rem;
+    left: 70px;
     top: 1rem;
     font-size: 0.8rem;
   }
