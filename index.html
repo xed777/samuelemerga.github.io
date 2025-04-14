@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XED</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="overlay-menu" id="menuOverlay">
+    <div class="content">
+      <div class="overlay-row">
+        <div class="overlay-column left">
+          <div class="overlay-label">PROGETTI</div>
+          <ul>
+            <li><strong>SHOWREEL</strong><br />Music by Proc Fiskal</li>
+            <br />Sam McGrath + Eoin McLoughlin</li>
+            <br />MR MR + Oliver Tree</li>
+          </ul>
+        </div>
+        <div class="overlay-column center">
+          <a onclick="showAboutPage()">ABOUT</a>
+          <a onclick="showContactPage()">CONTACT</a>
+        </div>
+        <div class="overlay-column right">
+          <div class="overlay-label">CLIENTI</div>
+          <ul>
+            <br />PULSE FILMS + JOCELYN ANQUETIL</li>
+            <br />TUMBLEWEED + DAVE MEYERS</li>
+            <br />PORTOFINO + KONRAD BEGG</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content" id="mainContent">
+    <div class="sidebar" onclick="toggleMenu()"></div>
+    <div class="column">
+      <div class="top-text">XED | PORTFOLIO</div>
+    </div>
+    <div class="column">
+      <div class="big-text"><span>XE</span></div>
+    </div>
+    <div class="column">
+      <div class="big-text"><span>D</span></div>
+    </div>
+  </main>
+
+  <section class="about-page" id="aboutPage">
+    <div class="top-text" onclick="hideAboutPage()">XED | PORTFOLIO</div>
+    <div class="about-page-content">
+      <p>Ciao, sono <strong>Samuele Merga</strong>, un artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.</p>
+      <p>Amo creare contenuti che restano impressi nella memoria... (continua come sopra)</p>
+      <a class="download" href="assets/Samuele_Merga_Portfolio.pdf" download>Scarica il mio Portfolio (PDF)</a>
+    </div>
+  </section>
+
+  <section class="contact-page" id="contactPage">
+    <div class="top-text" onclick="hideContactPage()">XED | PORTFOLIO</div>
+    <div class="contact-content">
+      <a href="mailto:samuelemerga4@gmail.com" target="_blank">Email</a>
+      <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
