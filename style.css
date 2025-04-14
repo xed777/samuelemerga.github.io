@@ -4,6 +4,8 @@
   --highlight: #10069F;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap');
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -14,7 +16,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: var(--bg);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   color: var(--text);
   overflow-x: hidden;
   overflow-y: auto;
@@ -37,6 +39,7 @@ body {
   z-index: 30;
   position: fixed;
   height: 100vh;
+  font-family: 'Syne', sans-serif;
 }
 
 .sidebar::before {
@@ -73,6 +76,7 @@ body.menu-open .main-content {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  font-family: 'Syne', sans-serif;
 }
 
 .big-text {
@@ -84,6 +88,7 @@ body.menu-open .main-content {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  font-family: 'Anton', sans-serif;
 }
 
 .overlay-menu {
@@ -119,6 +124,9 @@ body.menu-open .overlay-menu {
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .menu-links a:hover {
@@ -168,6 +176,7 @@ body.menu-open .overlay-menu {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  font-family: 'Syne', sans-serif;
 }
 
 .about-page-content a.download {
@@ -179,6 +188,7 @@ body.menu-open .overlay-menu {
   border-radius: 4px;
   width: fit-content;
   transition: background 0.3s ease;
+  font-family: 'Syne', sans-serif;
 }
 
 .about-page-content a.download:hover {
@@ -199,6 +209,7 @@ body.menu-open .overlay-menu {
   color: var(--text);
   border-bottom: 1px solid var(--highlight);
   word-break: break-word;
+  font-family: 'Syne', sans-serif;
 }
 
 .contact-content a:hover {
