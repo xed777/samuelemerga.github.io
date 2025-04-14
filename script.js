@@ -24,12 +24,12 @@ function fadeIn(element, displayType = 'grid') {
 
 function showPage(pageId) {
   const main = document.getElementById('mainContent');
-  const pages = ['aboutPage', 'contactPage'];
+  const pages = ['aboutPage', 'contactPage', 'projectsSection'];
 
   fadeOut(main, () => {
     pages.forEach(id => {
       const page = document.getElementById(id);
-      page.classList.toggle('active', id === pageId);
+      if (page) page.classList.toggle('active', id === pageId);
     });
 
     document.body.classList.remove('menu-open');
@@ -44,7 +44,7 @@ function hidePage(pageId) {
   fadeIn(main);
 }
 
-// Esempio di utilizzo:
+// === Pagine ===
 function showAboutPage() {
   showPage('aboutPage');
 }
@@ -61,7 +61,15 @@ function hideContactPage() {
   hidePage('contactPage');
 }
 
-// ===== MODALE PROGETTI =====
+function showProjectsPage() {
+  showPage('projectsSection');
+}
+
+function hideProjectsPage() {
+  hidePage('projectsSection');
+}
+
+// === Modale Progetti ===
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
