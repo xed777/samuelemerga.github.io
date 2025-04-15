@@ -1,3 +1,5 @@
+/* CSS RESPONSIVO PER XED PORTFOLIO */
+
 :root {
   --bg: #FFFFFF;
   --text: #000000;
@@ -20,10 +22,6 @@ html, body {
   color: var(--text);
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-body {
-  display: block;
 }
 
 /* SIDEBAR */
@@ -64,6 +62,8 @@ body.menu-open .sidebar::before {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .top-text {
@@ -151,16 +151,16 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
-/* ABOUT & CONTACT */
+/* ABOUT, CONTACT, PROJECTS */
 .about-page,
-.contact-page {
+.contact-page,
+.projects-section {
   display: none;
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg);
   color: var(--text);
   padding: 6rem 2rem 4rem;
-  text-align: left;
   position: relative;
   overflow-y: auto;
   flex-direction: column;
@@ -170,7 +170,8 @@ body.menu-open .overlay-menu {
 }
 
 .about-page.active,
-.contact-page.active {
+.contact-page.active,
+.projects-section.active {
   display: flex;
 }
 
@@ -185,18 +186,6 @@ body.menu-open .overlay-menu {
   text-align: left;
   font-size: 1.2rem;
   line-height: 1.6;
-}
-
-.about-page .top-text,
-.contact-page .top-text {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: 'Syne', sans-serif;
 }
 
 .about-page-content a.download {
@@ -229,23 +218,7 @@ body.menu-open .overlay-menu {
   color: var(--highlight);
 }
 
-/* PROGETTI & MODALE */
-.projects-section {
-  display: none;
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--bg);
-  padding: 4rem 2rem;
-  margin-left: 60px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects-section.active {
-  display: flex;
-}
-
+/* PROGETTI */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -315,10 +288,7 @@ body.menu-open .overlay-menu {
   text-transform: uppercase;
 }
 
-.project-placeholder {
-  padding: 1rem;
-}
-
+/* MODALE */
 .modal {
   display: none;
   position: fixed;
@@ -360,20 +330,8 @@ body.menu-open .overlay-menu {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .main-content {
-    margin-left: 60px;
-    width: calc(100vw - 60px);
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: clamp(3rem, 25vw, 9rem);
-  }
-
   .top-text {
     left: 70px;
-    top: 1rem;
     font-size: 0.8rem;
   }
 
@@ -391,15 +349,8 @@ body.menu-open .overlay-menu {
   .contact-content {
     padding-top: 0.5rem;
     gap: 1.5rem;
-    text-align: left;
     font-size: 0.95rem;
     line-height: 1.5;
-  }
-
-  .about-page-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    word-break: break-word;
   }
 
   .contact-content a {
