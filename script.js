@@ -103,3 +103,10 @@ document.addEventListener('keydown', function(event) {
     document.body.style.overflow = '';
   }
 });
+
+document.addEventListener("click", function(event) {
+    const preview = document.querySelector(".project-preview");
+    if (preview && !preview.contains(event.target)) {
+        preview.remove();
+    }
+});
