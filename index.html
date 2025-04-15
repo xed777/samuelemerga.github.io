@@ -62,66 +62,40 @@
     </div>
   </section>
 
-<!-- PROGETTI -->
-<section class="projects-section" id="projectsSection">
-  <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
-  <div class="projects-grid">
+  <!-- PROGETTI -->
+  <section class="projects-section" id="projectsSection">
+    <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
+    <div class="projects-grid">
 
-    <!-- Cartella Showreel -->
-    <div class="project-card hover-folder" onclick="openModal('showreelModal')">
-      <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
-      <div class="hover-folder-overlay">
-        <h3>THE REEL DEAL</h3>
-        <p>Video editing e motion design. Il mio reel 2024.</p>
+      <!-- Cartella Showreel -->
+      <div class="project-card hover-folder" onclick="openModal('showreelModal')">
+        <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
+        <div class="hover-folder-overlay">
+          <h3>THE REEL DEAL</h3>
+          <p>Video editing e motion design. Il mio reel 2024.</p>
+        </div>
       </div>
-    </div>
 
-  <!-- MODALE: Third Dimension -->
-<div id="thirdDimensionModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
-
-    <!-- Progetto 1 -->
-    <div class="modal-project">
-      <h3>Hazmat Transport – Stylized Truck</h3>
-      <div class="modal-image-row">
-        <img src="/mnt/data/SAMUELE_MERGA_consegna001.0000.jpeg" alt="Truck 1">
-        <img src="/mnt/data/SAMUELE_MERGA_consegna002.0000.jpeg" alt="Truck 2">
+      <!-- Cartella Third Dimension -->
+      <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
+        <img src="hazmat-thumb.jpg" alt="Third Dimension" class="project-image" />
+        <div class="hover-folder-overlay">
+          <h3>THIRD DIMENSION</h3>
+          <p>Texturing e render in 3D. Dal metallo al graffiti.</p>
+        </div>
       </div>
-      <p>
-        Texturing di un camion stilizzato ispirato a Noisy Boy da *Real Steel*. Materiali creati con **Substance Painter**, render in **Marmoset Toolbag**. 
-        Estetica futuristica, lettering giapponese e forte contrasto visivo.
-      </p>
-    </div>
 
-    <!-- Progetto 2 -->
-    <div class="modal-project">
-      <h3>Urban Totem – Meet Mat</h3>
-      <div class="modal-image-row">
-        <img src="/mnt/data/Faccia.jpg" alt="Meet Mat Face">
-        <img src="/mnt/data/meet mat.jpg" alt="Meet Mat Full">
+      <!-- Cartella Visual Alchemy -->
+      <div class="project-card hover-folder">
+        <img src="glitch-thumb.jpg" alt="Visual Alchemy" class="project-image" />
+        <div class="hover-folder-overlay">
+          <h3>VISUAL ALCHEMY</h3>
+          <p>VFX, compositing e caos controllato.</p>
+        </div>
       </div>
-      <p>
-        Texturing artistico ispirato a **Basquiat**, con superfici corrose, graffiti e layering urbano. 
-        Realizzato in **Substance Painter** durante il Master CG @ BigRock.
-      </p>
+
     </div>
-  </div>
-</div>
-
-
-    <!-- Cartella Visual Alchemy -->
-    <div class="project-card hover-folder">
-      <img src="glitch-thumb.jpg" alt="Visual Alchemy" class="project-image" />
-      <div class="hover-folder-overlay">
-        <h3>VISUAL ALCHEMY</h3>
-        <p>VFX, compositing e caos controllato.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- MODALE: Showreel -->
   <div id="showreelModal" class="modal">
@@ -137,6 +111,39 @@
     </div>
   </div>
 
+  <!-- MODALE: Third Dimension -->
+  <div id="thirdDimensionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
+
+      <!-- Progetto 1 -->
+      <div class="modal-project">
+        <h3>Hazmat Transport – Stylized Truck</h3>
+        <div class="modal-image-row">
+          <img src="/mnt/data/SAMUELE_MERGA_consegna001.0000.jpeg" alt="Truck 1">
+          <img src="/mnt/data/SAMUELE_MERGA_consegna002.0000.jpeg" alt="Truck 2">
+        </div>
+        <p>
+          Texturing di un camion stilizzato ispirato a Noisy Boy da <em>Real Steel</em>. Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>. 
+          Estetica futuristica, lettering giapponese e forte contrasto visivo.
+        </p>
+      </div>
+
+      <!-- Progetto 2 -->
+      <div class="modal-project">
+        <h3>Urban Totem – Meet Mat</h3>
+        <div class="modal-image-row">
+          <img src="/mnt/data/Faccia.jpg" alt="Meet Mat Face">
+          <img src="/mnt/data/meet mat.jpg" alt="Meet Mat Full">
+        </div>
+        <p>
+          Texturing artistico ispirato a <strong>Basquiat</strong>, con superfici corrose, graffiti e layering urbano. 
+          Realizzato in <strong>Substance Painter</strong> durante il Master CG @ BigRock.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <script>
     function toggleMobileMenu() {
       document.getElementById('mobileNav').classList.toggle('active');
@@ -145,4 +152,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
