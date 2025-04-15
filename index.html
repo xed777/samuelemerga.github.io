@@ -65,37 +65,44 @@
 </section>
 
 
-  <!-- PROGETTI -->
-  <section class="projects-section" id="projectsSection">
-    <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
-    <div class="projects-grid">
+<!-- PROGETTI -->
+<section class="projects-section" id="projectsSection">
+  <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
 
-      <!-- SHOWREEL -->
-      <div class="project-card hover-folder" onclick="openModal('showreelModal')">
-        <img src="build/showreel-preview.jpg" alt="Showreel" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>Video editing e motion design</p>
-        </div>
-      </div>
-
-      <!-- THIRD DIMENSION -->
-      <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
-        <img src="build/third-dimension-preview.jpg" alt="Third Dimension" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>Texturing 3D e render stilizzati</p>
-        </div>
-      </div>
-
-      <!-- VISUAL ALCHEMY -->
-      <div class="project-card hover-folder" onclick="openModal('visualAlchemyModal')">
-        <img src="build/visual-alchemy-preview.jpg" alt="Visual Alchemy" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>VFX e glitch compositing</p>
-        </div>
-      </div>
-
+  <!-- SHOWREEL 2024 -->
+  <div class="project-row" onclick="openModal('showreelModal')">
+    <div class="project-text">
+      <h3>SHOWREEL 2024</h3>
+      <p>Video editing & motion design</p>
     </div>
-  </section>
+    <div class="project-preview">
+      <img src="build/showreel-preview.jpg" alt="Showreel 2024" />
+    </div>
+  </div>
+
+  <!-- THIRD DIMENSION -->
+  <div class="project-row" onclick="openModal('thirdDimensionModal')">
+    <div class="project-text">
+      <h3>THIRD DIMENSION</h3>
+      <p>Texturing 3D & render stilizzati</p>
+    </div>
+    <div class="project-preview">
+      <img src="build/third-dimension-preview.jpg" alt="Third Dimension" />
+    </div>
+  </div>
+
+  <!-- VISUAL ALCHEMY -->
+  <div class="project-row" onclick="openModal('visualAlchemyModal')">
+    <div class="project-text">
+      <h3>VISUAL ALCHEMY</h3>
+      <p>VFX & glitch compositing</p>
+    </div>
+    <div class="project-preview">
+      <img src="build/visual-alchemy-preview.jpg" alt="Visual Alchemy" />
+    </div>
+  </div>
+</section>
+
 
   <!-- MODALE: SHOWREEL -->
   <div id="showreelModal" class="modal">
