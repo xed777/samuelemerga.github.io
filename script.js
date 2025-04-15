@@ -1,7 +1,14 @@
+// === MENU ===
 function toggleMenu() {
   document.body.classList.toggle('menu-open');
 }
 
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobileNav');
+  nav.classList.toggle('active');
+}
+
+// === TRANSIZIONI ===
 function fadeOut(element, callback) {
   element.style.transition = 'opacity 0.4s ease';
   element.style.opacity = '0';
@@ -22,6 +29,7 @@ function fadeIn(element, displayType = 'grid') {
   }, 10);
 }
 
+// === NAVIGAZIONE TRA LE PAGINE ===
 function showPage(pageId) {
   const main = document.getElementById('mainContent');
   const pages = ['aboutPage', 'contactPage', 'projectsSection'];
@@ -44,7 +52,6 @@ function hidePage(pageId) {
   fadeIn(main);
 }
 
-// === Pagine ===
 function showAboutPage() {
   showPage('aboutPage');
 }
@@ -69,12 +76,12 @@ function hideProjectsPage() {
   hidePage('projectsSection');
 }
 
-// === Modale Progetti ===
+// === MODALI ===
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
     modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // blocca lo scroll
+    document.body.style.overflow = 'hidden';
   }
 }
 
@@ -82,6 +89,17 @@ function closeModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
     modal.style.display = 'none';
-    document.body.style.overflow = ''; // riattiva lo scroll
+    document.body.style.overflow = '';
   }
 }
+
+// === CHIUSURA MODALI CON ESCAPE ===
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      modal.style.display = 'none';
+    });
+    document.body.style.overflow = '';
+  }
+});
