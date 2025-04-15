@@ -1,249 +1,171 @@
-/* === VARIABILI E RESET === */
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio di XED - Samuele Merga. Motion design, VFX, 3D e video editing.">
+  <title>XED</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="mobile-header">
+    <div class="logo">XED</div>
+    <button class="menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
+  </header>
 
-:root {
-  --bg: #FFFFFF;
-  --text: #000000;
-  --highlight: #10069F;
-  --hover-yellow: #FFD300;
-}
+  <!-- MOBILE MENU -->
+  <nav id="mobileNav" class="mobile-menu">
+    <button class="close-menu" onclick="toggleMobileMenu()">&times;</button>
+    <a onclick="showAboutPage(); toggleMobileMenu()">ABOUT</a>
+    <a onclick="showProjectsPage(); toggleMobileMenu()">PROGETTI</a>
+    <a onclick="showContactPage(); toggleMobileMenu()">CONTATTI</a>
+  </nav>
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap');
+  <!-- OVERLAY MENU -->
+  <nav class="overlay-menu" id="menuOverlay">
+    <div class="content">
+      <div class="menu-links">
+        <a onclick="showAboutPage()">ABOUT</a>
+        <a onclick="showProjectsPage()">PROGETTI</a>
+        <a onclick="showContactPage()">CONTATTI</a>
+      </div>
+    </div>
+  </nav>
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- SIDEBAR -->
+  <div class="sidebar" onclick="toggleMenu()"></div>
 
-html, body {
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--bg);
-  font-family: 'IBM Plex Mono', monospace;
-  color: var(--text);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+  <!-- MAIN HERO -->
+  <main class="main-content" id="mainContent">
+    <div class="top-text">xed's portfolio</div>
+    <div class="hero">
+      <h1 class="hero-title">XED</h1>
+    </div>
+  </main>
 
-body {
-  display: block;
-}
+  <!-- ABOUT -->
+  <section class="about-page" id="aboutPage">
+    <div class="top-text" onclick="hideAboutPage()">xed's portfolio</div>
+    <div class="about-page-content">
+      <p>Ciao, sono <strong>Samuele Merga</strong>, un artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.</p>
+      <p>Sono un professionista dinamico con una forte passione per la direzione artistica e la produzione audiovisiva. 
+      Specializzato in montaggio video con After Effects e Premiere Pro, sto ampliando le mie competenze con strumenti avanzati come Nuke X e Unreal Engine. 
+      Ho maturato esperienze pratiche presso realtà come Telelombardia e OLO Creative Farm, affinando la mia capacità di raccontare storie attraverso le immagini. 
+      Collaborativo, curioso e sempre pronto a mettermi in gioco, cerco ambienti stimolanti dove la creatività si trasforma in progetti concreti.</p>
+      <a class="download" href="Samuele_Merga_Portfolio.pdf" download>Scarica il mio Portfolio (PDF)</a>
+    </div>
+  </section>
 
-/* === SIDEBAR === */
-.sidebar {
-  background-color: var(--highlight);
-  color: var(--bg);
-  width: 60px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 30;
-  font-family: 'Syne', sans-serif;
-}
+  <!-- CONTATTI -->
+  <section class="contact-page" id="contactPage">
+    <div class="top-text" onclick="hideContactPage()">xed's portfolio</div>
+    <div class="contact-content">
+      <a href="mailto:samuelemerga4@gmail.com" target="_blank">Email</a>
+      <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+    </div>
+  </section>
 
-.sidebar::before {
-  content: '+';
-  transition: transform 0.3s ease, content 0.3s ease;
-}
+  <!-- PROGETTI -->
+  <section class="projects-section" id="projectsSection">
+    <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
+    <div class="projects-grid">
 
-body.menu-open .sidebar::before {
-  content: '\00d7';
-}
+      <!-- SHOWREEL -->
+      <div class="project-card hover-folder" onclick="openModal('showreelModal')">
+        <img src="showreel-preview.jpg" alt="Showreel" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>Video editing e motion design</p>
+        </div>
+      </div>
 
-/* === MAIN CONTENT === */
-.main-content {
-  margin-left: 60px;
-  width: calc(100vw - 60px);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+      <!-- THIRD DIMENSION -->
+      <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
+        <img src="third-dimension-preview.jpg" alt="Third Dimension" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>Texturing 3D e render stilizzati</p>
+        </div>
+      </div>
 
-.top-text {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: default;
-  font-family: 'Syne', sans-serif;
-  white-space: nowrap;
-  z-index: 10;
-  color: var(--text);
-}
+      <!-- VISUAL ALCHEMY -->
+      <div class="project-card hover-folder" onclick="openModal('visualAlchemyModal')">
+        <img src="visual-alchemy-preview.jpg" alt="Visual Alchemy" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>VFX e glitch compositing</p>
+        </div>
+      </div>
 
-.hero-title {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(3rem, 20vw, 14rem);
-  font-weight: 900;
-  letter-spacing: -2px;
-  text-align: center;
-  color: var(--text);
-  line-height: 1;
-}
+    </div>
+  </section>
 
-/* === PROGETTI === */
-.projects-section {
-  display: none;
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--bg);
-  padding: 4rem 2rem;
-  margin-left: 60px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+  <!-- MODALE: SHOWREEL -->
+  <div id="showreelModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('showreelModal')">&times;</span>
+      <div class="modal-video">
+        <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-text">
+        <h3>SHOWREEL</h3>
+        <p>Motion design e video editing personale. Creato con After Effects, Premiere Pro e un pizzico di follia visiva.</p>
+      </div>
+    </div>
+  </div>
 
-.projects-section.active {
-  display: flex;
-}
+  <!-- MODALE: THIRD DIMENSION -->
+  <div id="thirdDimensionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
+      <div class="modal-project">
+        <h3>Hazmat Transport – Stylized Truck</h3>
+        <div class="modal-image-row">
+          <img src="truck1.jpg" alt="Truck 1" loading="lazy">
+          <img src="truck2.jpg" alt="Truck 2" loading="lazy">
+        </div>
+        <p>
+          Texturing di un camion stilizzato ispirato a <em>Noisy Boy</em> da <strong>Real Steel</strong>. 
+          Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>. 
+          Estetica futuristica, lettering giapponese e forte contrasto visivo.
+        </p>
+      </div>
 
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border: 2px solid var(--text);
-  height: 300px;
-  text-decoration: none;
-  color: var(--text);
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-}
+      <div class="modal-project">
+        <h3>Urban Totem – Meet Mat</h3>
+        <div class="modal-image-row">
+          <img src="meetmat-face.jpg" alt="Meet Mat Face" loading="lazy">
+          <img src="meetmat-full.jpg" alt="Meet Mat Full" loading="lazy">
+        </div>
+        <p>
+          Texturing artistico ispirato a <strong>Basquiat</strong>, con superfici corrose, graffiti e layering urbano. 
+          Realizzato in <strong>Substance Painter</strong> durante il Master CG @ BigRock.
+        </p>
+      </div>
+    </div>
+  </div>
 
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: filter 0.3s ease;
-  filter: grayscale(100%);
-}
+  <!-- MODALE: VISUAL ALCHEMY -->
+  <div id="visualAlchemyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('visualAlchemyModal')">&times;</span>
+      <div class="modal-project">
+        <h3>Visual Alchemy</h3>
+        <p>
+          Una raccolta di esperimenti VFX tra compositing glitch, distorsione digitale e atmosfere psichedeliche. 
+          Progetti realizzati con After Effects e NukeX.
+        </p>
+      </div>
+    </div>
+  </div>
 
-.project-card:hover .project-image {
-  filter: grayscale(0%);
-}
-
-.hover-folder-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--hover-yellow);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  text-align: center;
-  opacity: 1;
-  z-index: 2;
-  font-size: 1rem;
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-/* Disattiva overlay hover se già visibile per default */
-.project-card:hover .hover-folder-overlay {
-  opacity: 1;
-}
-
-/* === MODALE === */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: var(--bg);
-  padding: 2rem;
-  border: 2px solid var(--text);
-  max-width: 800px;
-  width: 90%;
-  position: relative;
-  color: var(--text);
-  font-family: 'IBM Plex Mono', monospace;
-}
-
-.modal-video iframe {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 1rem;
-}
-
-.modal-project {
-  margin-bottom: 3rem;
-}
-
-.modal-project h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: 'Syne', sans-serif;
-  text-transform: uppercase;
-}
-
-.modal-image-row {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.modal-image-row img {
-  width: calc(50% - 0.5rem);
-  border: 2px solid black;
-}
-
-.close {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 0;
-    padding-top: 80px;
-    width: 100%;
-  }
-
-  .projects-section {
-    margin-left: 0;
-  }
-}
+  <!-- JS -->
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('active');
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
