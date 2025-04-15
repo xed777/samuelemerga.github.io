@@ -4,6 +4,7 @@
   --bg: #FFFFFF;
   --text: #000000;
   --highlight: #10069F;
+  --hover-yellow: #ffdd33;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap');
@@ -305,8 +306,8 @@ body.menu-open .overlay-menu {
 .hover-folder-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
+  background-color: var(--hover-yellow);
+  color: var(--text);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -315,6 +316,7 @@ body.menu-open .overlay-menu {
   text-align: center;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
+  z-index: 2;
 }
 
 .project-card:hover .hover-folder-overlay {
