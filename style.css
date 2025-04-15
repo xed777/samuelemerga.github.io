@@ -84,16 +84,19 @@ body.menu-open .sidebar::before {
 
 .top-text {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.75rem;
+  top: 2rem; /* Distanza dal bordo superiore */
+  left: 2rem; /* Distanza dal bordo sinistro */
+  font-size: 1.25rem; /* Aumenta la dimensione del testo */
   font-weight: bold;
   text-transform: uppercase;
   cursor: default;
   font-family: 'Syne', sans-serif;
-  white-space: nowrap;
-  z-index: 10;
   color: var(--text);
+  z-index: 10; /* Assicurati che la scritta sia sopra gli altri elementi */
+  white-space: nowrap; /* Impedisce il ritorno a capo */
+  background-color: rgba(255, 255, 255, 0.5); /* Sfondo trasparente per maggiore leggibilità */
+  padding: 0.5rem 1rem; /* Padding per migliorare la leggibilità */
+  border-radius: 5px; /* Aggiungi bordi arrotondati se lo desideri */
 }
 
 .hero {
@@ -324,9 +327,9 @@ body.menu-open .overlay-menu {
 
 .top-text.projects-text {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 0.75rem;
+  top: 2rem; /* Distanza dal bordo superiore */
+  left: 2rem; /* Distanza dal bordo sinistro */
+  font-size: 1.25rem; /* Aumenta la dimensione del testo */
   font-weight: bold;
   text-transform: uppercase;
   font-family: 'Syne', sans-serif;
@@ -533,7 +536,6 @@ body.menu-open .overlay-menu {
     font-size: 2rem;
     cursor: pointer;
 }
-/* === CONTATTI IN STILE ACIC === */
 .contact-structured {
   display: flex;
   flex-direction: column;
