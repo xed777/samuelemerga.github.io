@@ -2,7 +2,7 @@
   --bg: #FFFFFF;
   --text: #000000;
   --highlight: #10069F;
-   --hover-yellow: #FFD300;
+  --hover-yellow: #FFD300;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap');
@@ -27,7 +27,6 @@ body {
   display: block;
 }
 
-
 .mobile-header {
   display: none;
 }
@@ -44,7 +43,6 @@ body {
   cursor: pointer;
   color: var(--text);
 }
-
 
 .sidebar {
   background-color: var(--highlight);
@@ -169,7 +167,6 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
-
 .about-page,
 .contact-page {
   display: none;
@@ -292,7 +289,6 @@ body.menu-open .overlay-menu {
   display: block;
   transition: filter 0.3s ease;
 }
-
 
 .hover-folder-overlay {
   position: absolute;
