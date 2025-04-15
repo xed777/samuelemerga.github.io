@@ -120,7 +120,8 @@ body.menu-open .sidebar::before {
 
 body.menu-open #mainContent,
 body.menu-open .about-page,
-body.menu-open .contact-page {
+body.menu-open .contact-page,
+body.menu-open .projects-section {
   filter: blur(8px);
   transition: filter 0.4s ease;
   pointer-events: none;
@@ -248,6 +249,7 @@ body.menu-open .overlay-menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .projects-section.active {
@@ -321,6 +323,18 @@ body.menu-open .overlay-menu {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
   text-transform: uppercase;
+}
+
+.top-text.projects-text {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Syne', sans-serif;
+  color: var(--text);
+  z-index: 10;
 }
 
 /* === MODALE === */
