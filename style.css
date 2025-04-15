@@ -299,6 +299,7 @@ body.menu-open .overlay-menu {
   transition: filter 0.3s ease;
 }
 
+
 .project-card:hover .project-image {
   filter: grayscale(0%);
 }
