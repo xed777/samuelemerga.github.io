@@ -169,7 +169,7 @@ body.menu-open .overlay-menu {
   transform: translateY(-5px);
 }
 
-/* === ABOUT & CONTACT === */
+
 .about-page,
 .contact-page {
   display: none;
@@ -293,7 +293,6 @@ body.menu-open .overlay-menu {
   transition: filter 0.3s ease;
 }
 
-}
 
 .hover-folder-overlay {
   position: absolute;
