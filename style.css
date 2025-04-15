@@ -537,3 +537,45 @@ body.menu-open .overlay-menu {
     font-size: 2rem;
     cursor: pointer;
 }
+/* === CONTATTI BRUTALISTI === */
+.contact-content-brutalist {
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 6vh 6vw;
+  background-color: #f4f4f4;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-content-brutalist h2 {
+  font-size: 6vw;
+  margin-bottom: 3vh;
+  border-bottom: 2px solid black;
+  display: inline-block;
+  padding-bottom: 0.5vh;
+  font-family: 'Syne', sans-serif;
+  text-transform: uppercase;
+}
+
+.contact-content-brutalist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-content-brutalist li {
+  margin-bottom: 2.5vh;
+}
+
+.contact-content-brutalist a {
+  font-size: 3vw;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid black;
+  transition: color 0.2s ease;
+}
+
+.contact-content-brutalist a:hover {
+  color: var(--highlight);
+}
