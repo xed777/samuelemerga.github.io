@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio di XED - Samuele Merga. Motion design, VFX, 3D e video editing.">
   <title>XED</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- HEADER -->
   <header class="mobile-header">
     <div class="logo">XED</div>
     <button class="menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
   </header>
 
+  <!-- MOBILE MENU -->
   <nav id="mobileNav" class="mobile-menu">
     <button class="close-menu" onclick="toggleMobileMenu()">&times;</button>
     <a onclick="showAboutPage(); toggleMobileMenu()">ABOUT</a>
@@ -20,6 +23,7 @@
     <a onclick="showContactPage(); toggleMobileMenu()">CONTATTI</a>
   </nav>
 
+  <!-- OVERLAY MENU -->
   <nav class="overlay-menu" id="menuOverlay">
     <div class="content">
       <div class="menu-links">
@@ -30,8 +34,10 @@
     </div>
   </nav>
 
+  <!-- SIDEBAR -->
   <div class="sidebar" onclick="toggleMenu()"></div>
 
+  <!-- MAIN HERO -->
   <main class="main-content" id="mainContent">
     <div class="top-text">xed's portfolio</div>
     <div class="hero">
@@ -45,9 +51,9 @@
     <div class="about-page-content">
       <p>Ciao, sono <strong>Samuele Merga</strong>, un artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.</p>
       <p>Sono un professionista dinamico con una forte passione per la direzione artistica e la produzione audiovisiva. 
-        Specializzato in montaggio video con After Effects e Premiere Pro, sto ampliando le mie competenze con strumenti avanzati come Nuke X e Unreal Engine. 
-        Ho maturato esperienze pratiche presso realtà come Telelombardia e OLO Creative Farm, affinando la mia capacità di raccontare storie attraverso le immagini. 
-        Collaborativo, curioso e sempre pronto a mettermi in gioco, cerco ambienti stimolanti dove la creatività si trasforma in progetti concreti.</p>
+      Specializzato in montaggio video con After Effects e Premiere Pro, sto ampliando le mie competenze con strumenti avanzati come Nuke X e Unreal Engine. 
+      Ho maturato esperienze pratiche presso realtà come Telelombardia e OLO Creative Farm, affinando la mia capacità di raccontare storie attraverso le immagini. 
+      Collaborativo, curioso e sempre pronto a mettermi in gioco, cerco ambienti stimolanti dove la creatività si trasforma in progetti concreti.</p>
       <a class="download" href="Samuele_Merga_Portfolio.pdf" download>Scarica il mio Portfolio (PDF)</a>
     </div>
   </section>
@@ -65,37 +71,36 @@
   <!-- PROGETTI -->
   <section class="projects-section" id="projectsSection">
     <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
-<div class="projects-grid">
+    <div class="projects-grid">
 
-  <!-- SHOWREEL -->
-  <div class="project-card hover-folder" onclick="openModal('showreelModal')">
-    <img src="showreel-preview.jpg" alt="Showreel" class="project-image" />
-    <div class="hover-folder-overlay">
-      <p>Video editing e motion design</p>
+      <!-- SHOWREEL -->
+      <div class="project-card hover-folder" onclick="openModal('showreelModal')">
+        <img src="showreel-preview.jpg" alt="Showreel" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>Video editing e motion design</p>
+        </div>
+      </div>
+
+      <!-- THIRD DIMENSION -->
+      <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
+        <img src="third-dimension-preview.jpg" alt="Third Dimension" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>Texturing 3D e render stilizzati</p>
+        </div>
+      </div>
+
+      <!-- VISUAL ALCHEMY -->
+      <div class="project-card hover-folder" onclick="openModal('visualAlchemyModal')">
+        <img src="visual-alchemy-preview.jpg" alt="Visual Alchemy" class="project-image" loading="lazy" />
+        <div class="hover-folder-overlay">
+          <p>VFX e glitch compositing</p>
+        </div>
+      </div>
+
     </div>
-  </div>
-
-  <!-- THIRD DIMENSION -->
-  <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
-    <img src="third-dimension-preview.jpg" alt="Third Dimension" class="project-image" />
-    <div class="hover-folder-overlay">
-      <p>Texturing 3D e render stilizzati</p>
-    </div>
-  </div>
-
-  <!-- VISUAL ALCHEMY -->
-  <div class="project-card hover-folder" onclick="openModal('visualAlchemyModal')">
-    <img src="visual-alchemy-preview.jpg" alt="Visual Alchemy" class="project-image" />
-    <div class="hover-folder-overlay">
-      <p>VFX e glitch compositing</p>
-    </div>
-  </div>
-
-</div>
-
   </section>
 
-  <!-- MODALE: Showreel -->
+  <!-- MODALE: SHOWREEL -->
   <div id="showreelModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('showreelModal')">&times;</span>
@@ -109,7 +114,7 @@
     </div>
   </div>
 
-  <!-- MODALE: Third Dimension -->
+  <!-- MODALE: THIRD DIMENSION -->
   <div id="thirdDimensionModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
@@ -117,14 +122,12 @@
       <div class="modal-project">
         <h3>Hazmat Transport – Stylized Truck</h3>
         <div class="modal-image-row">
-          <img src="truck1.jpg" alt="Truck 1">
-<img src="truck2.jpg" alt="Truck 2">
-<img src="meetmat-face.jpg" alt="Meet Mat Face">
-<img src="meetmat-full.jpg" alt="Meet Mat Full">
-
+          <img src="truck1.jpg" alt="Truck 1" loading="lazy">
+          <img src="truck2.jpg" alt="Truck 2" loading="lazy">
         </div>
         <p>
-          Texturing di un camion stilizzato ispirato a Noisy Boy da <em>Real Steel</em>. Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>. 
+          Texturing di un camion stilizzato ispirato a <em>Noisy Boy</em> da <strong>Real Steel</strong>. 
+          Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>. 
           Estetica futuristica, lettering giapponese e forte contrasto visivo.
         </p>
       </div>
@@ -132,8 +135,8 @@
       <div class="modal-project">
         <h3>Urban Totem – Meet Mat</h3>
         <div class="modal-image-row">
-          <img src="meetmat-face.jpg" alt="Meet Mat Face">
-          <img src="meetmat-full.jpg" alt="Meet Mat Full">
+          <img src="meetmat-face.jpg" alt="Meet Mat Face" loading="lazy">
+          <img src="meetmat-full.jpg" alt="Meet Mat Full" loading="lazy">
         </div>
         <p>
           Texturing artistico ispirato a <strong>Basquiat</strong>, con superfici corrose, graffiti e layering urbano. 
@@ -143,11 +146,10 @@
     </div>
   </div>
 
-  <!-- MODALE: Visual Alchemy -->
+  <!-- MODALE: VISUAL ALCHEMY -->
   <div id="visualAlchemyModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('visualAlchemyModal')">&times;</span>
-
       <div class="modal-project">
         <h3>Visual Alchemy</h3>
         <p>
@@ -158,6 +160,7 @@
     </div>
   </div>
 
+  <!-- JS -->
   <script>
     function toggleMobileMenu() {
       document.getElementById('mobileNav').classList.toggle('active');
