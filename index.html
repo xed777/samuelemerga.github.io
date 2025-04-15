@@ -62,25 +62,41 @@
     </div>
   </section>
 
-  <!-- PROGETTI -->
-  <section class="projects-section" id="projectsSection">
-    <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
-    <div class="projects-grid">
-      <div class="project-card" onclick="openModal('showreelModal')">
-        <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
-        <div class="project-overlay">
-          <h3>SHOWREEL</h3>
-          <p>Motion design & video editing</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-placeholder">PROGETTO 2</div>
-      </div>
-      <div class="project-card">
-        <div class="project-placeholder">PROGETTO 3</div>
+<!-- PROGETTI -->
+<section class="projects-section" id="projectsSection">
+  <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
+  <div class="projects-grid">
+
+    <!-- Cartella Showreel -->
+    <div class="project-card hover-folder" onclick="openModal('showreelModal')">
+      <img src="https://img.youtube.com/vi/6KBu6psoLMY/hqdefault.jpg" alt="Showreel" class="project-image" />
+      <div class="hover-folder-overlay">
+        <h3>THE REEL DEAL</h3>
+        <p>Video editing e motion design. Il mio reel 2024.</p>
       </div>
     </div>
-  </section>
+
+    <!-- Cartella Third Dimension -->
+    <div class="project-card hover-folder">
+      <img src="hazmat-thumb.jpg" alt="Third Dimension" class="project-image" />
+      <div class="hover-folder-overlay">
+        <h3>THIRD DIMENSION</h3>
+        <p>Texturing e render in 3D. Dal metallo al graffiti.</p>
+      </div>
+    </div>
+
+    <!-- Cartella Visual Alchemy -->
+    <div class="project-card hover-folder">
+      <img src="glitch-thumb.jpg" alt="Visual Alchemy" class="project-image" />
+      <div class="hover-folder-overlay">
+        <h3>VISUAL ALCHEMY</h3>
+        <p>VFX, compositing e caos controllato.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- MODALE: Showreel -->
   <div id="showreelModal" class="modal">
