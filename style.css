@@ -81,6 +81,9 @@ body.menu-open .sidebar::before {
   justify-content: center;
   position: relative;
 }
+.main-content {
+  position: relative;
+}
 
 .top-text {
   position: absolute; /* Posiziona il testo sopra il contenuto */
