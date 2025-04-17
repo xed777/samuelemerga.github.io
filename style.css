@@ -537,3 +537,56 @@ body.menu-open .overlay-menu {
     font-size: 2rem;
     cursor: pointer;
 }
+.new-menu {
+  background-color: #10069F;
+  color: white;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Syne', sans-serif;
+}
+
+.new-menu .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.new-menu .menu-link {
+  font-size: 3rem;
+  text-decoration: line-through;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.new-menu .menu-link::after {
+  content: '→';
+  font-size: 2rem;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.new-menu .menu-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.new-menu .menu-link:hover::after {
+  color: white;
+}
+
+.new-menu footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: white;
+}
