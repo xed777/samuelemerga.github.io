@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- HEADER MOBILE -->
   <header class="mobile-header">
     <div class="logo">XED</div>
     <button class="menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
   </header>
 
-  <!-- MOBILE MENU -->
+  <!-- MENU MOBILE -->
   <nav id="mobileNav" class="mobile-menu">
     <button class="close-menu" onclick="toggleMobileMenu()">&times;</button>
     <a onclick="showAboutPage(); toggleMobileMenu()">ABOUT</a>
@@ -23,19 +23,23 @@
     <a onclick="showContactPage(); toggleMobileMenu()">CONTATTI</a>
   </nav>
 
-  <!-- OVERLAY MENU -->
-  <nav class="overlay-menu" id="menuOverlay">
-    <div class="content">
-      <div class="menu-links">
-        <a onclick="showAboutPage()">ABOUT</a>
-        <a onclick="showProjectsPage()">PROGETTI</a>
-        <a onclick="showContactPage()">CONTATTI</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR + MENU CUSTOM -->
   <div class="sidebar" onclick="toggleMenu()"></div>
+
+  <nav class="new-menu" id="customMenu">
+    <div class="menu-items">
+      <div class="menu-link" onclick="showAboutPage()">ABOUT</div>
+      <div class="menu-link" onclick="showProjectsPage()">PROGETTI</div>
+      <div class="menu-link" onclick="showContactPage()">CONTATTI</div>
+    </div>
+    <footer>
+      <span>Samuele Merga - Motion & Design</span>
+      <span>© 2025</span>
+      <a href="mailto:samuelemerga4@gmail.com" style="color: white;">Email</a>
+      <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank" style="color: white;">GitHub</a>
+      <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank" style="color: white;">LinkedIn</a>
+    </footer>
+  </nav>
 
   <!-- MAIN HERO -->
   <main class="main-content" id="mainContent">
@@ -48,7 +52,13 @@
   <!-- ABOUT -->
   <section class="about-page" id="aboutPage">
     <div class="top-text" onclick="hideAboutPage()">xed's portfolio</div>
-    <div class="about-page-content"><p>Ciao, sono <strong>Samuele Merga</strong>, artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.<br>Credo nella potenza del movimento e della narrazione visiva.</p><p>La mia esperienza spazia dal 3D alla post-produzione, con uno stile deciso e diretto.<br>Sono costantemente alla ricerca di nuove tecniche per spingere il mio lavoro oltre.</p><p>Lavoro con determinazione e precisione. Punto sempre all’impatto visivo. E all’essenza delle cose.</p></div>
+    <div class="about-page-content">
+      <p>Ciao, sono <strong>Samuele Merga</strong>, artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.<br>
+      Credo nella potenza del movimento e della narrazione visiva.</p>
+      <p>La mia esperienza spazia dal 3D alla post-produzione, con uno stile deciso e diretto.<br>
+      Sono costantemente alla ricerca di nuove tecniche per spingere il mio lavoro oltre.</p>
+      <p>Lavoro con determinazione e precisione. Punto sempre all’impatto visivo. E all’essenza delle cose.</p>
+    </div>
   </section>
 
   <!-- CONTATTI -->
@@ -93,7 +103,7 @@
     </div>
   </section>
 
-  <!-- MODALE: SHOWREEL -->
+  <!-- MODALI -->
   <div id="showreelModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('showreelModal')">&times;</span>
@@ -107,22 +117,16 @@
     </div>
   </div>
 
-  <!-- MODALE: THIRD DIMENSION -->
   <div id="thirdDimensionModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
-
       <div class="modal-project">
         <h3>Hazmat Transport – Stylized Truck</h3>
         <div class="modal-image-row">
           <img src="build/truck1.jpg" alt="Truck 1" loading="lazy">
           <img src="build/truck2.jpg" alt="Truck 2" loading="lazy">
         </div>
-        <p>
-          Texturing di un camion stilizzato ispirato a <em>Noisy Boy</em> da <strong>Real Steel</strong>. 
-          Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>. 
-          Estetica futuristica, lettering giapponese e forte contrasto visivo.
-        </p>
+        <p>Texturing di un camion stilizzato ispirato a <em>Noisy Boy</em> da <strong>Real Steel</strong>. Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>.</p>
       </div>
 
       <div class="modal-project">
@@ -131,29 +135,22 @@
           <img src="build/meetmat-face.jpg" alt="Meet Mat Face" loading="lazy">
           <img src="build/meetmat-full.jpg" alt="Meet Mat Full" loading="lazy">
         </div>
-        <p>
-          Texturing artistico ispirato a <strong>Basquiat</strong>, con superfici corrose, graffiti e layering urbano. 
-          Realizzato in <strong>Substance Painter</strong> durante il Master CG @ BigRock.
-        </p>
+        <p>Texturing ispirato a <strong>Basquiat</strong>. Superfici corrose, graffiti e layering urbano. Creato durante il Master CG @ BigRock.</p>
       </div>
     </div>
   </div>
 
-  <!-- MODALE: VISUAL ALCHEMY -->
   <div id="visualAlchemyModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('visualAlchemyModal')">&times;</span>
       <div class="modal-project">
         <h3>Visual Alchemy</h3>
-        <p>
-          Una raccolta di esperimenti VFX tra compositing glitch, distorsione digitale e atmosfere psichedeliche. 
-          Progetti realizzati con After Effects e NukeX.
-        </p>
+        <p>Esperimenti VFX tra compositing glitch, distorsione digitale e atmosfere psichedeliche. Realizzati con After Effects e NukeX.</p>
       </div>
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
