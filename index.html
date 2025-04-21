@@ -1,156 +1,125 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio di XED - Samuele Merga. Motion design, VFX, 3D e video editing.">
-  <title>XED</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono&family=Syne:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio of XEDNIV - Visual artist, motion designer, digital creative" />
+  <title>XEDNIV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- HEADER MOBILE -->
-  <header class="mobile-header">
-    <div class="logo">XED</div>
-    <button class="menu-toggle" onclick="toggleMobileMenu()">&#9776;</button>
-  </header>
-
-  <!-- MENU MOBILE -->
-  <nav id="mobileNav" class="mobile-menu">
-    <button class="close-menu" onclick="toggleMobileMenu()">&times;</button>
-    <a onclick="showAboutPage(); toggleMobileMenu()">ABOUT</a>
-    <a onclick="showProjectsPage(); toggleMobileMenu()">PROGETTI</a>
-    <a onclick="showContactPage(); toggleMobileMenu()">CONTATTI</a>
-  </nav>
-
-  <!-- SIDEBAR + MENU CUSTOM -->
-  <div class="sidebar" onclick="toggleMenu()"></div>
-
-  <nav class="new-menu" id="customMenu">
-    <div class="menu-items">
-      <div class="menu-link" onclick="showAboutPage()">ABOUT</div>
-      <div class="menu-link" onclick="showProjectsPage()">PROGETTI</div>
-      <div class="menu-link" onclick="showContactPage()">CONTATTI</div>
+  <!-- HOME -->
+  <section class="section" id="home">
+    <div class="nav-menu">
+      <a href="#works">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
     </div>
-    <footer>
-      <span>Samuele Merga - Motion & Design</span>
-      <span>© 2025</span>
-      <a href="mailto:samuelemerga4@gmail.com" style="color: white;">Email</a>
-      <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank" style="color: white;">GitHub</a>
-      <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank" style="color: white;">LinkedIn</a>
-    </footer>
-  </nav>
-
-  <!-- MAIN HERO -->
-  <main class="main-content" id="mainContent">
-    <div class="top-text">xed's portfolio</div>
-    <div class="hero">
-      <h1 class="hero-title">XED</h1>
-    </div>
-  </main>
+    <h1>XEDNIV</h1>
+  </section>
 
   <!-- ABOUT -->
-  <section class="about-page" id="aboutPage">
-    <div class="top-text" onclick="hideAboutPage()">xed's portfolio</div>
-    <div class="about-page-content">
-      <p>Ciao, sono <strong>Samuele Merga</strong>, artista visivo appassionato di <strong>motion design</strong> ed <strong>editing video</strong>.<br>
-      Credo nella potenza del movimento e della narrazione visiva.</p>
-      <p>La mia esperienza spazia dal 3D alla post-produzione, con uno stile deciso e diretto.<br>
-      Sono costantemente alla ricerca di nuove tecniche per spingere il mio lavoro oltre.</p>
-      <p>Lavoro con determinazione e precisione. Punto sempre all’impatto visivo. E all’essenza delle cose.</p>
+  <section class="about-grid" id="about">
+    <div class="about-header">
+      <div class="top-left" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+        <div class="text-info">
+          <span>XEDNIV</span><br>
+          <span>VISUAL ARTIST / MOTION DESIGNER</span><br>
+          <span>BASED IN COMO, ITALY</span>
+        </div>
+        <img src="como-icon.png" alt="Lake Como Icon" style="width: 120px; height: auto;" />
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="text-block">
+        <h1>CREATIVE<br>DEVELOPER</h1>
+        <p>I SUPPORT ARTISTS AND AGENCIES WITH CREATIVE DEVELOPMENT, STORYTELLING, AND DIGITAL EXPRESSION.</p>
+      </div>
+      <div class="image-block">
+        <img src="your-image.jpg" alt="PORTRAIT OF XEDNIV - CREATIVE DEVELOPER" />
+      </div>
+    </div>
+    <div class="scroll-arrow">
+      <a href="#works">↓</a>
     </div>
   </section>
 
-  <!-- CONTATTI -->
-  <section class="contact-page" id="contactPage">
-    <div class="top-text" onclick="hideContactPage()">xed's portfolio</div>
-    <div class="contact-content">
-      <a href="mailto:samuelemerga4@gmail.com" target="_blank">Email</a>
-      <a href="https://github.com/xed777/samuelemerga.github.io" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/samuele-merga-789989338/" target="_blank">LinkedIn</a>
+  <!-- WORKS -->
+  <section class="works-section" id="works">
+    <div class="work-block">
+      <!-- WORK 1 -->
+      <div class="work-entry">
+        <div class="work-header">
+          <h2>BRUTALIST</h2>
+          <h2>ARCHITECTURE</h2>
+        </div>
+        <div class="work-subheader"><span>1950S – EARLY 1980S</span></div>
+        <div class="work-image">
+          <img src="your-work.jpg" alt="Municipal Building – Belgrade" />
+          <div class="work-caption"><p>“Municipal Building – Belgrade”</p></div>
+        </div>
+        <div class="work-texts">
+          <p>LOREM IPSUM DOLOR SIT AMET...</p>
+          <p>INTEGER NON ERAT NEC FELIS...</p>
+          <p>NULLAM NON DIAM EU LIBERO...</p>
+        </div>
+      </div>
+
+      <!-- WORK 2 -->
+      <div class="work-entry">
+        <div class="work-header">
+          <h2>DIGITAL</h2>
+          <h2>INSTALLATION</h2>
+        </div>
+        <div class="work-subheader"><span>2022 – INTERACTIVE</span></div>
+        <div class="work-image">
+          <img src="digital-installation.jpg" alt="Digital Installation – Berlin" />
+          <div class="work-caption"><p>“Digital Installation – Berlin”</p></div>
+        </div>
+        <div class="work-texts">
+          <p>PROJECT INVOLVING IMMERSIVE AUDIOVISUAL INTERACTION...</p>
+          <p>DEVELOPED WITH TOUCH DESIGNER...</p>
+          <p>EXHIBITED AT ART+TECH FESTIVAL...</p>
+        </div>
+      </div>
+
+      <!-- WORK 3 -->
+      <div class="work-entry">
+        <div class="work-header">
+          <h2>EXPERIMENTAL</h2>
+          <h2>VIDEO</h2>
+        </div>
+        <div class="work-subheader"><span>2023 – SHORT FILM</span></div>
+        <div class="work-image">
+          <img src="experimental-video.jpg" alt="Experimental Video – Milan" />
+          <div class="work-caption"><p>“Experimental Video – Milan”</p></div>
+        </div>
+        <div class="work-texts">
+          <p>A CINEMATIC EXPLORATION OF MEMORY...</p>
+          <p>SHOT ENTIRELY ON SUPER 8...</p>
+          <p>PREMIERED AT LOCAL ART CINEMA NIGHT...</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROGETTI -->
-  <section class="projects-section" id="projectsSection">
-    <div class="top-text projects-text" onclick="hideProjectsPage()">xed's portfolio</div>
-    <div class="projects-grid">
-
-      <!-- SHOWREEL -->
-      <div class="project-card hover-folder" onclick="openModal('showreelModal')">
-        <img src="build/showreel-preview.jpg" alt="Showreel" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>Video editing e motion design</p>
-        </div>
-      </div>
-
-      <!-- THIRD DIMENSION -->
-      <div class="project-card hover-folder" onclick="openModal('thirdDimensionModal')">
-        <img src="build/third-dimension-preview.jpg" alt="Third Dimension" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>Texturing 3D e render stilizzati</p>
-        </div>
-      </div>
-
-      <!-- VISUAL ALCHEMY -->
-      <div class="project-card hover-folder" onclick="openModal('visualAlchemyModal')">
-        <img src="build/visual-alchemy-preview.jpg" alt="Visual Alchemy" class="project-image" loading="lazy" />
-        <div class="hover-folder-overlay">
-          <p>VFX e glitch compositing</p>
-        </div>
-      </div>
-
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <h1>GET IN TOUCH</h1>
+    <a class="email" href="mailto:vvork.xed@gmail.com">vvork.xed@gmail.com</a>
+    <div class="social">
+      <h2>Social:</h2>
+      <ul>
+        <li>Youtube</li>
+        <li>LinkedIn</li>
+        <li>Vimeo</li>
+      </ul>
+    </div>
+    <div class="footer-credits">
+      <p>2017 — 2025 © ALL RIGHTS RESERVED — CODE BY XEDNIV</p>
     </div>
   </section>
-
-  <!-- MODALI -->
-  <div id="showreelModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('showreelModal')">&times;</span>
-      <div class="modal-video">
-        <iframe src="https://www.youtube.com/embed/6KBu6psoLMY" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="modal-text">
-        <h3>SHOWREEL</h3>
-        <p>Motion design e video editing personale. Creato con After Effects, Premiere Pro e un pizzico di follia visiva.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="thirdDimensionModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('thirdDimensionModal')">&times;</span>
-      <div class="modal-project">
-        <h3>Hazmat Transport – Stylized Truck</h3>
-        <div class="modal-image-row">
-          <img src="build/truck1.jpg" alt="Truck 1" loading="lazy">
-          <img src="build/truck2.jpg" alt="Truck 2" loading="lazy">
-        </div>
-        <p>Texturing di un camion stilizzato ispirato a <em>Noisy Boy</em> da <strong>Real Steel</strong>. Materiali creati con <strong>Substance Painter</strong>, render in <strong>Marmoset Toolbag</strong>.</p>
-      </div>
-
-      <div class="modal-project">
-        <h3>Urban Totem – Meet Mat</h3>
-        <div class="modal-image-row">
-          <img src="build/meetmat-face.jpg" alt="Meet Mat Face" loading="lazy">
-          <img src="build/meetmat-full.jpg" alt="Meet Mat Full" loading="lazy">
-        </div>
-        <p>Texturing ispirato a <strong>Basquiat</strong>. Superfici corrose, graffiti e layering urbano. Creato durante il Master CG @ BigRock.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="visualAlchemyModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('visualAlchemyModal')">&times;</span>
-      <div class="modal-project">
-        <h3>Visual Alchemy</h3>
-        <p>Esperimenti VFX tra compositing glitch, distorsione digitale e atmosfere psichedeliche. Realizzati con After Effects e NukeX.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
 </body>
 </html>
