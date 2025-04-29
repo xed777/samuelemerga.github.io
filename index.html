@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XEDNIV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0a0a0a;
+      --text-color: #ffffff;
+      --accent-color: #0200EA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      text-transform: uppercase;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      font-family: 'Anton', sans-serif;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    nav {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    #home {
+      border-bottom: 2px solid var(--text-color);
+    }
+
+    #home h1 {
+      font-size: 25vw;
+      line-height: 1;
+      transform: rotate(-2deg);
+    }
+
+    .brutal-image {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .brutal-image:hover {
+      transform: scale(1.02);
+    }
+
+    .brutal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .brutal-image:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .brutal-button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .brutal-button:hover {
+      animation: shake 0.2s infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-2px); }
+      75% { transform: translateX(2px); }
+    }
+
+    .about-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .work-entry {
+      margin-bottom: 6rem;
+    }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .work-texts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .work-texts p {
+      border-left: 1px solid var(--text-color);
+      padding-left: 1rem;
+      font-family: monospace;
+      transition: color 0.2s ease;
+    }
+
+    .work-texts p:nth-child(odd) {
+      border-left: 2px dashed var(--accent-color);
+    }
+
+    .work-texts p:hover {
+      color: var(--accent-color);
+    }
+
+    #contact {
+      text-align: center;
+    }
+
+    #contact h1 {
+      font-size: 12vw;
+      margin-bottom: 1rem;
+    }
+
+    .email-link {
+      font-size: 2.4rem;
+      color: var(--accent-color);
+      text-decoration: underline;
+      margin-bottom: 3rem;
+      display: inline-block;
+    }
+
+    .social-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .work-texts {
+        grid-template-columns: 1fr;
+      }
+
+      .work-header {
+        font-size: 2rem;
+        flex-direction: column;
+      }
+
+      .social-buttons {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#works">WORK</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <section id="home" class="section">
+    <h1>XEDNIV</h1>
+  </section>
+
+  <section id="about" class="section">
+    <div class="about-content">
+      <div>
+        <div style="margin-bottom: 2rem;">
+          <span style="display: block;">XEDNIV</span>
+          <span style="display: block;">VISUAL ARTIST / MOTION DESIGNER</span>
+          <span style="display: block;">BASED IN COMO, ITALY</span>
+        </div>
+        <h1 style="font-size: clamp(5rem,10vw,9rem); line-height: 1.1; margin-bottom: 1.5rem;">
+          CREATIVE<br>DEVELOPER
+        </h1>
+        <p style="font-size: 2rem; line-height: 1.6;">
+          I SUPPORT ARTISTS AND AGENCIES WITH CREATIVE DEVELOPMENT, STORYTELLING, AND DIGITAL EXPRESSION.
+        </p>
+      </div>
+      <div class="brutal-image">
+        <img src="your-image.jpg" alt="PORTRAIT OF XEDNIV" style="border: 2px solid white;">
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="section">
+    <div id="works-container"></div>
+  </section>
+
+  <section id="contact" class="section">
+    <h1>GET IN TOUCH</h1>
+    <a href="mailto:vvork.xed@gmail.com" class="email-link">vvork.xed@gmail.com</a>
+    
+    <div>
+      <h2 style="margin-bottom: 1rem;">Social:</h2>
+      <div class="social-buttons">
+        <button class="brutal-button" onclick="window.open('https://youtu.be/6KBu6psoLMY?si=-K9Zt5PWsJMJ24Z-', '_blank')">
+          YouTube
+        </button>
+        <button class="brutal-button" onclick="window.open('https://www.linkedin.com/in/samuele-merga-789989338/', '_blank')">
+          LinkedIn
+        </button>
+        <button class="brutal-button" onclick="window.open('https://vimeo.com', '_blank')">
+          Vimeo
+        </button>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <button class="brutal-button" onclick="window.location.href='cv-xedniv.pdf'">
+        Download CV
+      </button>
+    </div>
+
+    <div style="margin-top: 5rem; font-family: monospace; color: var(--accent-color);">
+      2017 — 2025 © ALL RIGHTS RESERVED — CODE BY XEDNIV
+    </div>
+  </section>
+
+  <script>
+    // Works data
+    const works = [
+      {
+        title1: "BRUTALIST",
+        title2: "ARCHITECTURE",
+        period: "1950S – EARLY 1980S",
+        image: "your-work.jpg",
+        imageAlt: "Municipal Building – Belgrade",
+        caption: '"Municipal Building – Belgrade"',
+        texts: [
+          "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. CURABITUR A RISUS LOREM.",
+          "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. INTEGER NON ERAT NEC FELIS FACILISIS MALESUADA.",
+          "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NULLAM NON DIAM EU LIBERO TINCIDUNT TEMPOR."
+        ]
+      },
+      {
+        title1: "DIGITAL",
+        title2: "INSTALLATION",
+        period: "2022 – INTERACTIVE",
+        image: "digital-installation.jpg",
+        imageAlt: "Digital Installation – Berlin",
+        caption: '"Digital Installation – Berlin"',
+        texts: [
+          "PROJECT INVOLVING IMMERSIVE AUDIOVISUAL INTERACTION WITH SENSOR INPUT.",
+          "DEVELOPED WITH TOUCH DESIGNER AND REAL-TIME MOTION TRACKING SYSTEMS.",
+          "EXHIBITED AT ART+TECH FESTIVAL 2022, BERLIN."
+        ]
+      },
+      {
+        title1: "EXPERIMENTAL",
+        title2: "VIDEO",
+        period: "2023 – SHORT FILM",
+        image: "experimental-video.jpg",
+        imageAlt: "Experimental Video – Milan",
+        caption: '"Experimental Video – Milan"',
+        texts: [
+          "A CINEMATIC EXPLORATION OF MEMORY, LIGHT, AND URBAN SPACES.",
+          "SHOT ENTIRELY ON SUPER 8 AND DIGITALLY PROCESSED FOR MODERN SCREENINGS.",
+          "PREMIERED AT LOCAL ART CINEMA NIGHT 2023, MILAN."
+        ]
+      }
+    ];
+
+    // Render works
+    const worksContainer = document.getElementById('works-container');
+    works.forEach(work => {
+      worksContainer.innerHTML += `
+        <div class="work-entry">
+          <div class="work-header">
+            <h2>${work.title1}</h2>
+            <h2>${work.title2}</h2>
+          </div>
+          <div style="text-align: center; opacity: 0.7; margin-bottom: 2rem;">
+            ${work.period}
+          </div>
+          <div class="brutal-image">
+            <img src="${work.image}" alt="${work.imageAlt}" style="border: 2px solid white;">
+          </div>
+          <div style="text-align: center; font-family: monospace; opacity: 0.6; margin: 1rem 0 2rem;">
+            ${work.caption}
+          </div>
+          <div class="work-texts">
+            ${work.texts.map(text => `<p>${text}</p>`).join('')}
+          </div>
+        </div>
+      `;
+    });
+
+    // Intersection Observer for section animations
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Lazy loading for images
+    const images = document.querySelectorAll('img');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.getAttribute('data-src');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach(img => {
+      img.setAttribute('data-src', img.src);
+      img.src = '';
+      imageObserver.observe(img);
+    });
+  </script>
+</body>
+</html>
