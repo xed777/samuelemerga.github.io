@@ -4,134 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DemoCraftStudio</title>
-  <!-- Font Inter da Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f4f4;
-      color: #000;
-    }
-
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 40px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      font-size: 4.5rem;
-      font-weight: 900;
-      letter-spacing: -1px;
-      text-align: center;
-      margin-bottom: 0;
-      line-height: 1;
-    }
-
-    .subheader {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1000px;
-      margin-top: -25px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 60px;
-    }
-
-    .image-container {
-      width: 300px;
-      height: 440px;
-      background-color: #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 25px;
-    }
-
-    .image-container p {
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    .description {
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 1.5;
-      text-align: center;
-      max-width: 600px;
-      margin-bottom: 100px;
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 700px;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        font-size: 2.8rem;
-      }
-
-      .subheader {
-        font-size: 0.7rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .image-container {
-        width: 200px;
-        height: 300px;
-      }
-
-      .description {
-        font-size: 0.85rem;
-        margin-bottom: 60px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <div class="wrapper">
-    <header>@DEMOCRAFTSTUDIO</header>
-    <div class="subheader">
-      <span>Based in London</span>
-      <span>Since 2019</span>
+  <div class="main">
+    <div class="top">
+      <div class="top-bar">
+        <span>Based in London</span>
+        <span>Since 2019</span>
+      </div>
+      <h1>@DEMOCRAFTSTUDIO</h1>
     </div>
 
-    <div class="image-container">
-      <p>Image Placeholder</p>
+    <div class="middle">
+      <div class="image-box">
+        <p>Image Placeholder</p>
+        <!-- oppure <img src="img/your-image.jpg" alt="image" /> -->
+      </div>
+      <p class="desc">
+        A MULTIDISCIPLINARY DESIGN STUDIO WHO<br>
+        VALUE CRAFT AND UNIQUENESS
+      </p>
     </div>
 
-    <div class="description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-      Magnam voluptas, minus laboriosam soluta.
+    <div class="footer">
+      <span>STUDIO</span>
+      <span>PROJECTS</span>
+      <span>CONTACT</span>
     </div>
-
-    <footer>
-      <div>Studio</div>
-      <div>Projects</div>
-      <div>Contact</div>
-    </footer>
   </div>
 
 </body>
